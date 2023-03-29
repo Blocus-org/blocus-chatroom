@@ -1,7 +1,8 @@
 # Blocus Chatroom
 
-
-
+<div align='center'>
+    <img src='preview.png'>
+</div>
 Instant messaging app with HTML/CSS JavaScript and PHP
 
 ## Features
