@@ -344,7 +344,7 @@ Now that you know how to manage the Apache service itself, you should take a few
 (original source: https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-debian-11)
 
 ## <a name='config'> Config</a>
-
+- Create an empty 'images' directory in /php
 - Open the config file (php/config.php)
 - Set username and password for database
 - Create database (blocus_chat_db)
