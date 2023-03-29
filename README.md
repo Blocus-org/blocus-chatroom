@@ -345,6 +345,8 @@ Now that you know how to manage the Apache service itself, you should take a few
 ## <a name='config'> Config</a>
 
 - Open the config file (php/config.php)
-- Username and password for db
+- Set username and password for database
+- Create database (blocus_chat_db)
 - Put all files in your webserver root
+- Import .sql file with adminer  (blocus_chat_db.sql) (http://localhost/adminer.php)
 - Visit http://localhost
