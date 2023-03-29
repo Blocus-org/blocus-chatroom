@@ -20,7 +20,7 @@ Instant messaging app with HTML/CSS JavaScript and PHP
 
 You need to setup an apache/php/mariadb webserver
 - [Linux](#linux)
-- [Windows](#windows)
+- [Windows](#windows) (soon)
 - [Web server already setup](#config)
 
 
