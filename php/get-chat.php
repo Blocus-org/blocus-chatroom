@@ -1,5 +1,6 @@
 <?php 
     session_start();
+    require 'encrypt.php';
     if(isset($_SESSION['unique_id'])){
         include_once "config.php";
         $outgoing_id = $_SESSION['unique_id'];
@@ -14,14 +15,14 @@
                 if($row['outgoing_msg_id'] === $outgoing_id){
                     $output .= '<div class="chat outgoing">
                                 <div class="details">
-                                    <p>'. $row['msg'] .'</p>
+                                    <p>'.decrypt($row['msg']).'</p>
                                 </div>
                                 </div>';
                 }else{
                     $output .= '<div class="chat incoming">
                                 <img src="php/images/'.$row['img'].'" alt="">
                                 <div class="details">
-                                    <p>'. $row['msg'] .'</p>
+                                    <p>'.decrypt($row['msg']) .'</p>
                                 </div>
                                 </div>';
                 }
@@ -33,5 +34,4 @@
     }else{
         header("location: ../login.php");
     }
-
 ?>
