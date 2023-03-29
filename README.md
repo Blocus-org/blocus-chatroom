@@ -1,2 +1,2 @@
 # blocus-chatroom
-Encrypted(next update) instant messaging app with JavaScript and PHP
+Encrypted instan messaging app with HTML/CSS JavaScript and PHP

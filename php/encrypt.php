@@ -1,6 +1,6 @@
 <?php
 	define("encryption_method", "AES-256-CTR");
-	define("key", /*"256-bit key"*/);
+	define("key", ")J@NcRfUjXn2r5u8x/A%D*G-KaPdSgVk");
 
 	function encrypt($data) {
  		$key = key;

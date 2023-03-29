@@ -20,7 +20,7 @@
                     <div class="content">
                     <img src="php/images/'. $row['img'] .'" alt="">
                     <div class="details">
-                        <span>'. $row['fname']. " " . $row['lname'] .'</span>
+                        <span>'. $row['email'] .'</span>
                         <p>'. $you . $msg .'</p>
                     </div>
                     </div>
