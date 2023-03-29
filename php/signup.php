@@ -6,10 +6,10 @@
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
     if(!empty($fname) && !empty($lname) && !empty($email) && !empty($password)){
-        if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+        if(isset($email)){
             $sql = mysqli_query($conn, "SELECT * FROM users WHERE email = '{$email}'");
             if(mysqli_num_rows($sql) > 0){
-                echo "$email - This email already exist!";
+                echo "$email - This pseudo already exist!";
             }else{
                 if(isset($_FILES['image'])){
                     $img_name = $_FILES['image']['name'];
@@ -38,7 +38,7 @@
                                         $_SESSION['unique_id'] = $result['unique_id'];
                                         echo "success";
                                     }else{
-                                        echo "This email address not Exist!";
+                                        echo "This pseudo not Exist!";
                                     }
                                 }else{
                                     echo "Something went wrong. Please try again!";
@@ -53,7 +53,7 @@
                 }
             }
         }else{
-            echo "$email is not a valid email!";
+            echo "$email is not a valid pseudo!";
         }
     }else{
         echo "All input fields are required!";

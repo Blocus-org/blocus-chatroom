@@ -14,17 +14,15 @@
         <div class="error-text"></div>
         <div class="name-details">
           <div class="field input">
-            <label>First Name</label>
-            <input type="text" name="fname" placeholder="First name" required>
+            <input type= "hidden" value= "somebody's first name" name="fname" placeholder="First name" required>
           </div>
           <div class="field input">
-            <label>Last Name</label>
-            <input type="text" name="lname" placeholder="Last name" required>
+            <input type="hidden" value="somebody's last name" name="lname" placeholder="Last name" required>
           </div>
         </div>
         <div class="field input">
-          <label>Email Address</label>
-          <input type="text" name="email" placeholder="Enter your email" required>
+          <label>Choose a username</label>
+          <input type="text" name="email" placeholder="Enter your Github's username or pseudo" required>
         </div>
         <div class="field input">
           <label>Password</label>

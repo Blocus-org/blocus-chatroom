@@ -15,6 +15,7 @@
                 if($sql2){
                     $_SESSION['unique_id'] = $row['unique_id'];
                     echo "success";
+                    header('refresh');
                 }else{
                     echo "Something went wrong. Please try again!";
                 }
