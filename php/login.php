@@ -20,10 +20,10 @@
                     echo "Something went wrong. Please try again!";
                 }
             }else{
-                echo "Email or Password is Incorrect!";
+                echo "Username or Password is Incorrect!";
             }
         }else{
-            echo "$email - This email not Exist!";
+            echo "$email - This Username does not Exist!";
         }
     }else{
         echo "All input fields are required!";
