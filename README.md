@@ -16,6 +16,11 @@ Instant messaging app with HTML/CSS JavaScript and PHP
 - Made with the less JavaScript possible 
 - Even more coming soon (Contacts, persistant area, intagrated proxies, etc)
 
+
+## How to use
+- Go visit the official instance [chatroom.blocus.ch](https://chatroom.blocus.ch)
+- Download the [android app](https://github.com/blocus-org/blocus-chatroom-android/tags) (Alpha)
+
 ## How to host
 
 You need to setup an apache/php/mariadb webserver
