@@ -11,7 +11,25 @@
             if(mysqli_num_rows($sql) > 0){
                 echo "$email - This pseudo already exist!";
             }else{
-                if(isset($_FILES['image'])){
+                if(empty($_FILES['image']['tmp_name'])){
+                    $ran_id = rand(time(), 100000000);
+                    $status = "Active now";
+                    $encrypt_pass = password_hash($password, PASSWORD_DEFAULT);
+                    $insert_query = mysqli_query($conn, "INSERT INTO users (unique_id, fname, lname, email, password, img, status)
+                    VALUES ({$ran_id}, '{$fname}','{$lname}', '{$email}', '{$encrypt_pass}', 'default.png', '{$status}')");
+                    if($insert_query){
+                        $select_sql2 = mysqli_query($conn, "SELECT * FROM users WHERE email = '{$email}'");
+                        if(mysqli_num_rows($select_sql2) > 0){
+                            $result = mysqli_fetch_assoc($select_sql2);
+                            $_SESSION['unique_id'] = $result['unique_id'];
+                            echo "success";
+                        }else{
+                            echo "This pseudo not Exist!";
+                        }
+                    }else{
+                        echo "Something went wrong. Please try again!";
+                    }
+                }else{
                     $img = $_FILES['image'];
                     $img_name = sec($img['name']);
                     $img_type = $img['type'];
@@ -43,15 +61,11 @@
                                 echo "Something went wrong. Please try again!";
                             }
                         }
-                    }else{
-                        echo "Please use an image file (jpg, jpeg, png)";
                     }               
-                }else{
-                    echo "$email is not a valid pseudo!";
                 }
             }
-        }else{
-                echo "All input fields are required!";
         }
+    }else{
+                echo "All input fields with a ' * ' are required!";
     }
 ?>

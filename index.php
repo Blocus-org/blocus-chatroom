@@ -2,10 +2,9 @@
   session_start();
   if(isset($_SESSION['unique_id'])){
     header("location: users.php");
-  }
+  };
+  include_once "header.php";
 ?>
-
-<?php include_once "header.php"; ?>
 <body>
   <div class="wrapper">
     <section class="form signup">
@@ -21,17 +20,17 @@
           </div>
         </div>
         <div class="field input">
-          <label>Choose a username</label>
+          <label>Choose a username *</label>
           <input type="text" name="email" placeholder="Enter your Github's username or pseudo" required>
         </div>
         <div class="field input">
-          <label>Password</label>
+          <label>Password *</label>
           <input type="password" name="password" placeholder="Enter new password" required>
           <i class="fas fa-eye"></i>
         </div>
         <div class="field image">
-          <label>Select Image</label>
-          <input type="file" name="image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
+          <label>Select Image (facultative)</label>
+          <input type="file" name="image" accept="image/x-png ,image/jpeg,image/jpg">
         </div>
         <div class="field button">
           <input type="submit" name="submit" value="Continue to Chat">
@@ -40,9 +39,7 @@
       <div class="link">Already signed up? <a href="login.php">Login now</a></div>
     </section>
   </div>
-
   <script src="javascript/pass-show-hide.js"></script>
   <script src="javascript/signup.js"></script>
-
 </body>
 </html>
