@@ -22,7 +22,7 @@
         <a href="users.php" class="back-icon"><i class="fas fa-arrow-left"></i></a>
         <img src="php/images/<?php echo $row['img']; ?>" alt="">
         <div class="details">
-          <span><?php echo $row['email'] ?></span>
+          <span><?php echo $row['email']; ?></span>
           <p><?php echo $row['status']; ?></p>
         </div>
       </header>

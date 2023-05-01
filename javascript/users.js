@@ -25,7 +25,7 @@ searchBar.onkeyup = ()=>{
     if(xhr.readyState === XMLHttpRequest.DONE){
         if(xhr.status === 200){
           let data = xhr.response
-          usersList.innerHTML = decodeURIComponent(data)
+          usersList.innerHTML = data
         }
     }
   }
@@ -41,7 +41,7 @@ setInterval(() =>{
         if(xhr.status === 200){
           let data = xhr.response
           if(!searchBar.classList.contains("active")){
-            usersList.innerHTML = decodeURIComponent(data)
+            usersList.innerHTML = data
           }
         }
     }
