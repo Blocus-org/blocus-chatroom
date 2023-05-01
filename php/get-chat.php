@@ -12,17 +12,18 @@
         $query = mysqli_query($conn, $sql);
         if(mysqli_num_rows($query) > 0){
             while($row = mysqli_fetch_assoc($query)){
+                $msg = decrypt($row['msg']);
                 if($row['outgoing_msg_id'] === $outgoing_id){
                     $output .= '<div class="chat outgoing">
                                 <div class="details">
-                                    <p>'.decrypt($row['msg']).'</p>
+                                    <p>'.sec($msg).'</p>
                                 </div>
                                 </div>';
                 }else{
                     $output .= '<div class="chat incoming">
                                 <img src="php/images/'.$row['img'].'" alt="">
                                 <div class="details">
-                                    <p>'.decrypt($row['msg']) .'</p>
+                                    <p>'.sec($msg).'</p>
                                 </div>
                                 </div>';
                 }

@@ -8,5 +8,12 @@
   if(!$conn){
     echo "Database connection error".mysqli_connect_error();
   }
+
+  function sec($data){
+    $data = trim($data);
+    $data = stripslashes($data);  
+    $data = strip_tags($data);
+    return $data;
+  }
 ?>
 

@@ -1,4 +1,5 @@
 <?php
+    include_once 'config.php';
     require 'encrypt.php';
     while($row = mysqli_fetch_assoc($query)){
         $sql2 = "SELECT * FROM messages WHERE (incoming_msg_id = {$row['unique_id']}
@@ -20,8 +21,8 @@
                     <div class="content">
                     <img src="php/images/'. $row['img'] .'" alt="">
                     <div class="details">
-                        <span>'. $row['email'] .'</span>
-                        <p>'. $you . $msg .'</p>
+                        <span>'. sec($row['email']) .'</span>
+                        <p>'. $you . sec($msg) .'</p>
                     </div>
                     </div>
                     <div class="status-dot '. $offline .'"><i class="fas fa-circle"></i></div>
