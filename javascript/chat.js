@@ -46,7 +46,7 @@ setInterval(() =>{
       if(xhr.readyState === XMLHttpRequest.DONE){
           if(xhr.status === 200){
             let data = xhr.response
-            chatBox.innerHTML = decodeURIComponent(data)
+            chatBox.innerHTML = data
             if(!chatBox.classList.contains("active")){
                 scrollToBottom()
               }
@@ -55,7 +55,7 @@ setInterval(() =>{
     }
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
     xhr.send("incoming_id="+incoming_id)
-}, 500);
+}, 500)
 
 function scrollToBottom(){
     chatBox.scrollTop = chatBox.scrollHeight
