@@ -46,7 +46,7 @@ setInterval(() =>{
       if(xhr.readyState === XMLHttpRequest.DONE){
           if(xhr.status === 200){
             let data = xhr.response
-            chatBox.innerHTML = data
+            chatBox.innerHTML = decodeURIComponent(data)
             if(!chatBox.classList.contains("active")){
                 scrollToBottom()
               }
