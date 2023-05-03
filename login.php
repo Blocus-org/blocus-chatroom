@@ -13,7 +13,7 @@
         <div class="error-text"></div>
         <div class="field input">
           <label>Username</label>
-          <input type="text" name="email" placeholder="Enter your Github's username or pseudo" required>
+          <input type="text" name="email" placeholder="Enter your username" required>
         </div>
         <div class="field input">
           <label>Password</label>
