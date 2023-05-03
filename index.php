@@ -21,7 +21,7 @@
         </div>
         <div class="field input">
           <label>Choose a username *</label>
-          <input type="text" name="email" placeholder="Enter your Github's username or pseudo" required>
+          <input type="text" name="email" placeholder="Any username" required>
         </div>
         <div class="field input">
           <label>Password *</label>
@@ -29,7 +29,7 @@
           <i class="fas fa-eye"></i>
         </div>
         <div class="field image">
-          <label>Select Image (facultative)</label>
+          <label>Select Image (optional)</label>
           <input type="file" name="image" accept="image/x-png ,image/jpeg,image/jpg">
         </div>
         <div class="field button">
