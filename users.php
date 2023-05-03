@@ -23,12 +23,14 @@
             <p><?php echo $row['status']; ?></p>
           </div>
         </div>
+          <button class="themes" onclick="changeTheme('dark')">
+          </button>
         <a href="php/logout.php?logout_id=<?php echo $row['unique_id']; ?>" class="logout">Logout</a>
       </header>
       <div class="search">
         <span class="text">Select an user to start chat</span>
         <input type="text" placeholder="Enter name to search...">
-        <button><i class="fas fa-search"></i></button>
+        <button><img class="searchpng" src="icons/search.png"></button>
       </div>
       <div class="users-list">
   
@@ -37,6 +39,18 @@
   </div>
 
   <script src="javascript/users.js"></script>
+  <script type="text/javascript">
+    function changeTheme(theme) {
+    document.body.classList = 'root'
+    document.body.classList.add(theme)
+  }
+  switch (theme) {
+    case 'dark':
+        localStorage.setItem('theme', 'dark')
+        break
+    }
+    document.body.classList = localStorage.getItem('theme')
+  </script>
 
 </body>
 </html>

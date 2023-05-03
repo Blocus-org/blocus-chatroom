@@ -38,6 +38,7 @@
       </form>
       <div class="link">Already signed up? <a href="login.php">Login now</a></div>
     </section>
+    <div><p class="source code"><a href="https://github.com/blocus-org/blocus-chatroom">Source</a></p></div>
   </div>
   <script src="javascript/pass-show-hide.js"></script>
   <script src="javascript/signup.js"></script>
