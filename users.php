@@ -17,20 +17,15 @@
               $row = mysqli_fetch_assoc($sql);
             }
           ?>
-          <img src="php/images/<?php echo $row['img']; ?>" alt="">
-          <div class="details">
-            <span><?php echo $row['email']?></span>
-            <p><?php echo $row['status']; ?></p>
-          </div>
+          <a href="dashboard.php" class="dashboard-btn">Dashboard</a>
         </div>
-          <button class="themes" onclick="changeTheme('dark')">
-          </button>
         <a href="php/logout.php?logout_id=<?php echo $row['unique_id']; ?>" class="logout">Logout</a>
+        <script src="javascript/toggle-theme.js"></script>
       </header>
       <div class="search">
         <span class="text">Select an user to start chat</span>
         <input type="text" placeholder="Enter name to search...">
-        <button><img class="searchpng" src="icons/search.png"></button>
+        <button></button>
       </div>
       <div class="users-list">
   
@@ -39,18 +34,6 @@
   </div>
 
   <script src="javascript/users.js"></script>
-  <script type="text/javascript">
-    function changeTheme(theme) {
-    document.body.classList = 'root'
-    document.body.classList.add(theme)
-  }
-  switch (theme) {
-    case 'dark':
-        localStorage.setItem('theme', 'dark')
-        break
-    }
-    document.body.classList = localStorage.getItem('theme')
-  </script>
 
 </body>
 </html>
