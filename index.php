@@ -30,7 +30,7 @@
         </div>
         <div class="field image">
           <label>Select Image (optional)</label>
-          <input type="file" name="image" accept="image/x-png ,image/jpeg,image/jpg">
+          <input class="image-subission-button" type="file" name="image" accept="image/x-png ,image/jpeg,image/jpg">
         </div>
         <div class="field button">
           <input type="submit" name="submit" value="Continue to Chat">
@@ -38,7 +38,9 @@
       </form>
       <div class="link">Already signed up? <a href="login.php">Login now</a></div>
     </section>
-    <div><p class="source code"><a href="https://github.com/blocus-org/blocus-chatroom">Source</a></p></div>
+    <div class="footer">
+      <p class="version_footer">beta-2.0.0</p><p class="source_footer">AGPL-v3 <a href="https://github.com/blocus-org/blocus-chatroom">Source</a></p>
+    </div>
   </div>
   <script src="javascript/pass-show-hide.js"></script>
   <script src="javascript/signup.js"></script>
