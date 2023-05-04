@@ -19,7 +19,7 @@
             header("location: users.php");
           }
         ?>
-        <a href="users.php" class="back-icon"><img class="backiconpng"src="icons/backward.png" ></a>
+        <a href="users.php" class="backicon">←</a>
         <img src="php/images/<?php echo $row['img']; ?>" alt="">
         <div class="details">
           <span><?php echo $row['email']; ?></span>
@@ -38,6 +38,6 @@
   </div>
 
   <script src="javascript/chat.js"></script>
-
+  <scripts src="javascript/set-theme.js"></script>
 </body>
 </html>
