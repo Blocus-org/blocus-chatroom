@@ -26,6 +26,9 @@
       </form>
       <div class="link">Not yet signed up? <a href="index.php">Signup now</a></div>
     </section>
+    <div class="footer">
+    <p class="version_footer">beta-2.0.0</p><p class="source_footer">AGPL-v3 <a href="https://github.com/blocus-org/blocus-chatroom">Source</a></p>
+  </div>
   </div>
   <script src="javascript/pass-show-hide.js"></script>
   <script src="javascript/login.js"></script>
