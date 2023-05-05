@@ -23,21 +23,24 @@ include_once "header.php"; ?>
           </div>
         </div>
         <a href="php/logout.php?logout_id=<?php echo $row['unique_id']; ?>" class="logout">Logout</a>
-        <script src="javascript/toggle-theme.js"></script>
       </header>
       <div class="dashboard">
-        <p class="text">Dashboard-beta (1.0.0)</p><br>
+      <br>
         <ul class="dashboard-list">
-          <a href='users.php'><li class="dashboard-list-line">Chat with somone </li></a><br>
-          <li class="dashboard-list-line">Switch theme <input class="toggle_box" type="button" onclick="toggleTheme()" id="slider"></li>
+          <li class="dashboard-list-line" onclick="location.href = 'users.php'"><img class="dash-icon" src="icons/icon.png"> <p>Chat with somone</p></li><br>
+          <li class="dashboard-list-line" onclick="location.href = 'contacts.php'"><img class="dash-icon" src="icons/contacts.png"><p>Contacts</p></li><br>
+          <li class="dashboard-list-line" onclick="location.href = 'php/settings.php'"><img class="dash-icon" src="icons/settings.png"><p>Settings</p></li><br>
+          <li class="dashboard-list-line" onclick="toggleTheme()" id="slider"><img class="dash-icon" src="icons/themes.png"><p>Theme (Light - Dark)</p></li><br>
+          <li class="dashboard-list-line" onclick="location.href = 'php/wipe-account.php'"><img class="dash-icon" src="icons/wipe.png"><p>Wipe account and data</p></li><br>
         </ul>
       </div>
       <div class="users-list">
-  
       </div>
     </section>
+<?php
+include 'footer.php';
+?>
   </div>
-
-
+  <script src="javascript/toggle-theme.js"></script>
 </body>
 </html>
