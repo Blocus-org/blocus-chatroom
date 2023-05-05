@@ -20,7 +20,7 @@ body{
   color: var(--text);
 }
 
-/*Themes variable: you can easily setup your own colors here. Add your themes, and create pull request!*/
+/*Themes variable: you can easily setup your own colors here. Add your themes, and create pull request, it will be added to the main instance!*/
 
 /*BEGIN*/
 
@@ -28,26 +28,32 @@ body{
   --bg-color: #ffffff;
   --secondary: #ffffff;
   --text: #333;
-  --buttons-bg-color: #808080;
+  --buttons-bg-color: #dbdbdb;
   --buttons-text: #333;
   --chatbox-bg: #f7f7f7;
   --back-icon-color: #333;
   --search-btn-bg: #222;
   --search-btn-img: url(/icons/search-light.png);
-  --dashboard-text-color: #710000;
+  --incoming-msg-bg-color: #fff;
+  --outgoing-msg-bg-color:#333;
+  --incoming-msg-text:#333;
+  --outgoing-msg-text:#fff;
 }
 
 .dark {
   --bg-color: #333;
   --secondary: #222;
   --text: #ddd;
-  --buttons-bg-color: #808080;
-  --buttons-text: #333;
+  --buttons-bg-color: #7f0000;
+  --buttons-text: #ddd;
   --chatbox-bg:  #878787;
   --back-icon-color: White;
   --search-btn-bg: #ddd;
   --search-btn-img: url(/icons/search-dark.png);
-  --dashboard-text-color: #ff0000;
+  --incoming-msg-bg-color:#333;
+  --outgoing-msg-bg-color: #7f0000;
+  --incoming-msg-text: #ddd;
+  --outgoing-msg-text: #ddd;
 }
 
 /*END*/
@@ -69,25 +75,32 @@ body{
 .dashboard-list-line a{
   text-decoration: none;
   margin: 10px;
-  color: var(--dashboard-text-color);
 }
 
 .dashboard-list-line {
-  display: block;
+  display: flex;
   background: var(--buttons-bg-color);
-  color: var(--buttons-color);
+  color: var(--buttons-text);
   outline: none;
   border: none;
   padding: 7px 15px;
-  text-decoration: none;
   border-radius: 5px;
   font-size: 17px;
+  cursor: pointer;
+}
+
+.dashboard-list-line p {
+  margin-left:20px;
+  text-align: center; 
+  vertical-align: middle;
+  display: inline-block;
+  padding: 10px;
 }
 
 .dashboard-btn{
   display: block;
   background: var(--buttons-bg-color);
-  color: var(--buttons-color);
+  color: var(--buttons-text);
   outline: none;
   border: none;
   padding: 7px 15px;
@@ -96,17 +109,15 @@ body{
   font-size: 17px;
 }
 
-/*END*/
-
-.toggle_box {
-  position: relative;
-  display: block;
-  width: 30px;
-  border-radius: 8px;
+.dash-icon{
+  display: inline;
   height: 30px;
-  cursor: pointer;
-  right: 0px;
+  width: auto;
+  margin: auto;
+  margin-left: 5px;
 }
+
+/*END*/
 
 .footer{
   margin: 20px;
@@ -133,6 +144,26 @@ body{
 /* Login & Signup Form CSS Start */
 .form{
   padding: 25px 30px;
+}
+
+.image-subission-button{
+  text-align: center;
+  display: block;
+  margin: auto;
+  background: var(--buttons-bg-color);
+  color: var(--buttons-text);
+  outline: none;
+  border: none;
+  padding: 7px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 17px;
+  width: 50%;
+  cursor: pointer;
+}
+
+.image-subission-input{
+  display: none
 }
 
 .form header{
@@ -200,9 +231,9 @@ body{
 .form form .button input{
   height: 45px;
   border: none;
-  color: #fff;
+  color: var(--buttons-text);
   font-size: 17px;
-  background: #333;
+  background: var(--buttons-bg-color);
   border-radius: 5px;
   cursor: pointer;
   margin-top: 13px;
@@ -271,15 +302,16 @@ body{
 }
 
 .users header .logout{
-  display: block;
+  display: flex;
   background: var(--buttons-bg-color);
-  color: var(--buttons-color);
+  color: var(--buttons-text);
   outline: none;
   border: none;
   padding: 7px 15px;
   text-decoration: none;
   border-radius: 5px;
   font-size: 17px;
+  height: 35px;
 }
 
 .users .search{
@@ -455,8 +487,8 @@ body{
 }
 
 .outgoing .details p{
-  background: #333;
-  color: #fff;
+  background: var(--outgoing-msg-bg-color);
+  color: var(--outgoing-msg-text);
   border-radius: 18px 18px 0 18px;
 }
 
@@ -477,8 +509,8 @@ body{
 }
 
 .incoming .details p{
-  background: #fff;
-  color: #333;
+  background: var(--incoming-msg-bg-color);
+  color: var(--incoming-msg-text);
   border-radius: 18px 18px 18px 0;
 }
 
@@ -595,5 +627,4 @@ body{
   .chat-area form button{
     width: 45px;
   }
-
 }
