@@ -4,8 +4,7 @@
   if(!isset($_SESSION['unique_id'])){
     header("location: login.php");
   }
-?>
-<?php include_once "header.php"; ?>
+include_once "header.php"; ?>
 <body>
   <div class="wrapper">
     <section class="users">
@@ -28,12 +27,12 @@
         <button></button>
       </div>
       <div class="users-list">
-  
       </div>
     </section>
+<?php
+  include 'footer.php';
+?>
   </div>
-
   <script src="javascript/users.js"></script>
-
 </body>
 </html>
