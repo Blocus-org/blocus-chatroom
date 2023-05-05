@@ -4,8 +4,8 @@
   $admin_username = "Zqfd";
 
   $hostname = "localhost";
-  $username = "zqfd";
-  $password = "AFozeRZ82199";
+  $username = "";
+  $password = "";
   $dbname = "blocus_chat_db";
 
   $conn = mysqli_connect($hostname, $username, $password, $dbname);
