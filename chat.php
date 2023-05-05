@@ -19,7 +19,7 @@
             header("location: users.php");
           }
         ?>
-        <a href="users.php" class="back-icon"><i class="fas fa-arrow-left"></i></a>
+        <a href="users.php" class="backicon">←</a>
         <img src="php/images/<?php echo $row['img']; ?>" alt="">
         <div class="details">
           <span><?php echo $row['email']; ?></span>
@@ -32,12 +32,12 @@
       <form action="#" class="typing-area">
         <input type="text" class="incoming_id" name="incoming_id" value="<?php echo $user_id; ?>" hidden>
         <input type="text" name="message" class="input-field" placeholder="Type a message here..." autocomplete="off">
-        <button><i class="fab fa-telegram-plane"></i></button>
+        <button><img class="send_img" src="icons/send.png" alt="send"></button>
       </form>
     </section>
   </div>
 
   <script src="javascript/chat.js"></script>
-
+  <scripts src="javascript/set-theme.js"></script>
 </body>
 </html>

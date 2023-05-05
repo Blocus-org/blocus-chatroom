@@ -4,13 +4,22 @@ inputField = form.querySelector(".input-field"),
 sendBtn = form.querySelector("button"),
 chatBox = document.querySelector(".chat-box")
 
+
 form.onsubmit = (e)=>{
     e.preventDefault()
 }
 
 inputField.focus();
 inputField.onkeyup = ()=>{
-    if(inputField.value != ""){
+    if(inputField.value !== ""){
+        sendBtn.classList.add("active")
+    }else{
+        sendBtn.classList.remove("active")
+    }
+}
+
+inputField.onclick = ()=>{
+    if(inputField.value !== ""){
         sendBtn.classList.add("active")
     }else{
         sendBtn.classList.remove("active")
@@ -59,5 +68,10 @@ setInterval(() =>{
 
 function scrollToBottom(){
     chatBox.scrollTop = chatBox.scrollHeight
+    if(inputField.value !== ""){
+        sendBtn.classList.add("active")
+    }else{
+        sendBtn.classList.remove("active")
+    }
   }
   

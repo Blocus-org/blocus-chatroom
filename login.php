@@ -1,4 +1,5 @@
 <?php 
+  include_once "php/config.php";
   session_start();
   if(isset($_SESSION['unique_id'])){
     header("location: users.php");
@@ -21,11 +22,15 @@
           <i class="fas fa-eye"></i>
         </div>
         <div class="field button">
-          <input type="submit" name="submit" value="Continue to Chat">
+          <input class ='logout'type="submit" name="submit" value="Continue to Chat">
         </div>
       </form>
       <div class="link">Not yet signed up? <a href="index.php">Signup now</a></div>
     </section>
+<?php
+  include 'footer.php';
+?>
+  </div>
   </div>
   <script src="javascript/pass-show-hide.js"></script>
   <script src="javascript/login.js"></script>
