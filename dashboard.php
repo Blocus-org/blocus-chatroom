@@ -25,13 +25,13 @@ include_once "header.php"; ?>
         <a href="php/logout.php?logout_id=<?php echo $row['unique_id']; ?>" class="logout">Logout</a>
       </header>
       <div class="dashboard">
-      <br>
         <ul class="dashboard-list">
           <li class="dashboard-list-line" onclick="location.href = 'users.php'"><img class="dash-icon" src="icons/icon.png"> <p>Chat with somone</p></li><br>
           <li class="dashboard-list-line" onclick="location.href = 'contacts.php'"><img class="dash-icon" src="icons/contacts.png"><p>Contacts</p></li><br>
-          <li class="dashboard-list-line" onclick="location.href = 'php/settings.php'"><img class="dash-icon" src="icons/settings.png"><p>Settings</p></li><br>
-          <li class="dashboard-list-line" onclick="toggleTheme()" id="slider"><img class="dash-icon" src="icons/themes.png"><p>Theme (Light - Dark)</p></li><br>
-          <li class="dashboard-list-line" onclick="location.href = 'php/wipe-account.php'"><img class="dash-icon" src="icons/wipe.png"><p>Wipe account and data</p></li><br>
+          <li class="dashboard-list-line" onclick="location.href = 'settings.php'"><img class="dash-icon" src="icons/settings.png"><p>Settings</p></li><br>
+          <li class="dashboard-list-line" onclick="toggleTheme()" id="slider"><img class="dash-icon" src="icons/themes.png"><p>Theme (Light - Blocus)</p></li><br>
+          <li class="dashboard-list-line" onclick="location.href = 'wipe.php'"><img class="dash-icon" src="icons/wipe.png"><p>Wipe account and data</p></li><br>
+          <li class="dashboard-list-line" onclick="location.href = 'privacy-policy.php'"><img class="dash-icon" src="icons/privacy.png"><p>Privacy policy</p></a></li>
         </ul>
       </div>
       <div class="users-list">

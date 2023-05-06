@@ -24,7 +24,7 @@
                         <p>'. $you . sec($msg) .'</p>
                     </div>
                     </div>
-                    <div class="status-dot '. $offline .'"><i class="fas fa-circle"></i></div>
+                    <div class="status-dot '. $offline .'">&#x2022;</i></div>
                 </a>';
     }
 ?>

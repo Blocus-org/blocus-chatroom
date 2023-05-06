@@ -13,10 +13,11 @@
         if(mysqli_num_rows($query) > 0){
             while($row = mysqli_fetch_assoc($query)){
                 $msg = decrypt($row['msg']);
+                $msg_id = $row['msg_id'];
                 if($row['outgoing_msg_id'] === $outgoing_id){
-                    $output .= '<div class="chat outgoing">
+                    $output .= '<div class="chat outgoing" onclick="displayMessageMenu()">
                                 <div class="details">
-                                    <p>'.sec($msg).'</p>
+                                    <p>'.sec($msg).'<br></p><a style="display: none;" class="dustbin" id="dusbin" href="user.php?user_id='.$incoming_id.'&delete_message='.$msg_id.'">Delete message</a>
                                 </div>
                                 </div>';
                 }else{

@@ -18,16 +18,9 @@ include_once "header.php"; ?>
           ?>
           <a href="dashboard.php" class="dashboard-btn">Dashboard</a>
         </div>
-        <a href="php/logout.php?logout_id=<?php echo $row['unique_id']; ?>" class="logout">Logout</a>
+        <a href="php/logout.php?logout_id=<?php echo $row['unique_id']; ?>" class="logout"><p>Logout</p></a>
         <script src="javascript/toggle-theme.js"></script>
       </header>
-      <div class="search">
-        <span class="text">Select an user to start chat</span>
-        <input type="text" placeholder="Enter name to search...">
-        <button><img class="dash-icon" src="icons/search.png"></button>
-      </div>
-      <div class="users-list">
-      </div>
     </section>
 <?php
   include 'footer.php';
