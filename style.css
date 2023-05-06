@@ -1,13 +1,55 @@
+
+
+/*Themes variable: you can easily setup your own colors here. Add your themes, and create pull request, it will be added to the main instance!*/
+
+:root {
+  --bg-color: #ffffff;
+  --secondary: #ffffff;
+  --text: #333;
+  --links-color: #2b8d00;
+  --buttons-bg-color: #dbdbdb;
+  --search-button-bg-color-inactive: #f7f7f7;
+  --search-button-bg-color-active: #dbdbdb;
+  --buttons-text: #333;
+  --chatbox-bg: #f7f7f7;
+  --back-icon-color: #333;
+  --search-btn-bg: #222;
+  --incoming-msg-bg-color: #fff;
+  --outgoing-msg-bg-color:#333;
+  --incoming-msg-text:#333;
+  --outgoing-msg-text:#fff;
+  --status-dot-color-online: #2b8d00;
+  --status-dot-color-offline: #b0b0b0;
+}
+
+.dark {
+  --bg-color: #333;
+  --secondary: #222;
+  --text: #ddd;
+  --links-color: #ac0000;
+  --buttons-bg-color: #7f0000;
+  --search-button-bg-color-inactive: #7f0000;
+  --search-button-bg-color-active: #af0000;
+  --buttons-text: #ddd;
+  --chatbox-bg:  #878787;
+  --back-icon-color: #ddd;
+  --search-btn-bg: #ddd;
+  --incoming-msg-bg-color:#333;
+  --outgoing-msg-bg-color: #7f0000;
+  --incoming-msg-text: #ddd;
+  --outgoing-msg-text: #ddd;
+  --status-dot-color-online: #ac0000;
+  --status-dot-color-offline: #b0b0b0;
+}
+
+/*END*/
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
-}
-
-a{
-  text-decoration: none;
 }
 
 body{
@@ -19,44 +61,6 @@ body{
   padding: 0 10px;
   color: var(--text);
 }
-
-/*Themes variable: you can easily setup your own colors here. Add your themes, and create pull request, it will be added to the main instance!*/
-
-/*BEGIN*/
-
-:root /*Light*/ {
-  --bg-color: #ffffff;
-  --secondary: #ffffff;
-  --text: #333;
-  --buttons-bg-color: #dbdbdb;
-  --buttons-text: #333;
-  --chatbox-bg: #f7f7f7;
-  --back-icon-color: #333;
-  --search-btn-bg: #222;
-  --search-btn-img: url(/icons/search-light.png);
-  --incoming-msg-bg-color: #fff;
-  --outgoing-msg-bg-color:#333;
-  --incoming-msg-text:#333;
-  --outgoing-msg-text:#fff;
-}
-
-.dark {
-  --bg-color: #333;
-  --secondary: #222;
-  --text: #ddd;
-  --buttons-bg-color: #7f0000;
-  --buttons-text: #ddd;
-  --chatbox-bg:  #878787;
-  --back-icon-color: White;
-  --search-btn-bg: #ddd;
-  --search-btn-img: url(/icons/search-dark.png);
-  --incoming-msg-bg-color:#333;
-  --outgoing-msg-bg-color: #7f0000;
-  --incoming-msg-text: #ddd;
-  --outgoing-msg-text: #ddd;
-}
-
-/*END*/
 
 /* Dashboard style */
 
@@ -119,6 +123,11 @@ body{
 
 /*END*/
 
+a{
+  text-decoration: none !important;
+  color: var(--links-color);
+}
+
 .footer{
   margin: 20px;
 }
@@ -146,10 +155,12 @@ body{
   padding: 25px 30px;
 }
 
+.login-link, .signup-link{
+  color: var(--links-color) !important;
+}
+
 .image-subission-button{
-  text-align: center;
   display: block;
-  margin: auto;
   background: var(--buttons-bg-color);
   color: var(--buttons-text);
   outline: none;
@@ -158,8 +169,13 @@ body{
   text-decoration: none;
   border-radius: 5px;
   font-size: 17px;
-  width: 50%;
+  width: 30%;
   cursor: pointer;
+}
+
+#file-chosen{
+  margin-left: 0.3rem;
+  font-family: sans-serif;
 }
 
 .image-subission-input{
@@ -353,19 +369,24 @@ body{
   font-size: 17px;
   cursor: pointer;
   border: none;
-  background-image: var(--search-btn-img);
+  background: var(--search-button-bg-color-inactive);
   outline: none;
   border-radius: 0 5px 5px 0;
   transition: all 0.2s ease;
 }
 
 .users .search button.active{
-  background: var(--secondary);
+  background: var(--search-button-bg-color-active);
   color: var(--text);
 }
 
-.search button.active i::before{
+.search button.active ::before{
   content: '\f00d';
+}
+
+.privacy-div{
+  max-height: 350px;
+  overflow-y: scroll;
 }
 
 .users-list{
@@ -399,13 +420,13 @@ body{
 }
 
 .users-list a .status-dot{
-  font-size: 12px;
-  color: #468669;
+  font-size: 30px;
+  color: var(--status-dot-color-online);
   padding-left: 10px;
 }
 
 .users-list a .status-dot.offline{
-  color: #ccc;
+  color: var(--status-dot-color-offline);
 }
 
 /* Chat Area CSS Start */
@@ -413,6 +434,20 @@ body{
   display: flex;
   align-items: center;
   padding: 18px 30px;
+}
+
+.dustbin{
+  text-align: right;
+  color: var(--text);
+  min-height: 20px;
+  max-height: 20px;
+  width: 100%;
+  font-size: 10px;
+  margin-left: calc(100% - 75px);
+}
+
+.dustbin:hover{
+  color: Red;
 }
 
 .chat-area header .back-icon{
