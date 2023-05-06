@@ -1,5 +1,7 @@
 <?php 
   include_once "php/config.php";
+  ini_set('session.cookie_lifetime', 60 * 60 * 24 * 100);
+  ini_set('session.gc_minlifetime', 60 * 60 * 24 * 100);
   session_start();
   if(isset($_SESSION['unique_id'])){
     header("location: users.php");
@@ -25,7 +27,7 @@
           <input class ='logout'type="submit" name="submit" value="Continue to Chat">
         </div>
       </form>
-      <div class="link">Not yet signed up? <a href="index.php">Signup now</a></div>
+      <div class="link">Not yet signed up? <a class="signup-link" href="index.php">Signup now</a></div>
     </section>
 <?php
   include 'footer.php';
