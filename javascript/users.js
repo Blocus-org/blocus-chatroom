@@ -3,6 +3,7 @@ searchIcon = document.querySelector(".search button"),
 usersList = document.querySelector(".users-list")
 
 searchIcon.onclick = ()=>{
+  refreshList()
   searchBar.classList.toggle("show")
   searchIcon.classList.toggle("active")
   searchBar.focus()
@@ -13,6 +14,7 @@ searchIcon.onclick = ()=>{
 }
 
 searchBar.onkeyup = ()=>{
+  refreshList()
   let searchTerm = searchBar.value
   if(searchTerm != ""){
     searchBar.classList.add("active")
@@ -33,7 +35,7 @@ searchBar.onkeyup = ()=>{
   xhr.send("searchTerm=" + searchTerm)
 }
 
-setInterval(() =>{
+const refreshList = () =>{
   let xhr = new XMLHttpRequest()
   xhr.open("GET", "php/users.php", true)
   xhr.onload = ()=>{
@@ -47,5 +49,6 @@ setInterval(() =>{
     }
   }
   xhr.send()
-}, 500)
+}
 
+refreshList()
