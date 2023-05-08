@@ -21,6 +21,15 @@ include_once "header.php"; ?>
         <a href="php/logout.php?logout_id=<?php echo $row['unique_id']; ?>" class="logout"><p>Logout</p></a>
         <script src="javascript/toggle-theme.js"></script>
       </header>
+      <div class="wipe-account-div">
+        <ul class="are-you-sure-list">
+          <li class="are-you-sure-list"><p>If you delete your account you will not be able to recover your data.<br><br> Are you sure?</p></li><br>
+        </ul>
+        <ul>
+          <a href="php/wipe.php?delete_account=<?= $_SESSION['unique_id']?>"><li class="are-you-sure-list">Yes</li></a>
+          <a href="dashboard.php"><li class="are-you-sure-list">No</li></a>
+       <ul/>
+      </div>
     </section>
 <?php
   include 'footer.php';
