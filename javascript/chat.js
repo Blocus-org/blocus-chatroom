@@ -3,19 +3,15 @@ incoming_id = form.querySelector(".incoming_id").value,
 inputField = form.querySelector(".input-field"),
 sendBtn = form.querySelector("button"),
 chatBox = document.querySelector(".chat-box")
-
-
-chatBox.onchange = ()=>{
-    refreshMessages()
-}
+chatBoxScrollMode = document.getElementById("chatbox-scroll-mode")
 
 form.onsubmit = (e)=>{
-    refreshMessages()
     e.preventDefault()
 }
 
 inputField.focus();
 inputField.onkeyup = ()=>{
+    refreshMessages()
     scrollToBottom()
     if(inputField.value !== ""){
         sendBtn.classList.add("active")
@@ -49,12 +45,14 @@ sendBtn.onclick = ()=>{
     xhr.send(formData)
 }
 chatBox.onmouseenter = ()=>{
-    refreshMessages()
+    setTimeout(function() {}, 10)
     chatBox.classList.add("active")
+    chatBoxScrollMode.innerHTML = 'keep your mouse inside the chat box or touch it to scroll'
 }
 
 chatBox.onmouseleave = ()=>{
     chatBox.classList.remove("active")
+    chatBoxScrollMode.innerHTML = ""
 }
 
 const refreshMessages = () =>{
@@ -86,3 +84,4 @@ function scrollToBottom(){
 
 refreshMessages()
 scrollToBottom()
+setInterval(refreshMessages, 1000)
