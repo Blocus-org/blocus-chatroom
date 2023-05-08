@@ -22,6 +22,7 @@
                                 </div>';
                 }else{
                     $output .= '<div class="chat incoming">
+                                <audio src="audio/notifications.mp3"></audio>
                                 <img src="php/images/'.$row['img'].'" alt="">
                                 <div class="details">
                                     <p>'.sec($msg).'</p>
