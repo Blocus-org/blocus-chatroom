@@ -25,3 +25,10 @@ continueBtn.onclick = ()=>{
   let formData = new FormData(form)
   xhr.send(formData)
 }
+
+const actualBtn = document.getElementById('image-subission-input');
+const fileChosen = document.getElementById('file-chosen');
+
+actualBtn.addEventListener('change', function(){
+  fileChosen.textContent = 'Profile image: ' + this.files[0].name
+})
