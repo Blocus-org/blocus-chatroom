@@ -1,10 +1,10 @@
 <?php 
   include_once "php/config.php";
-  ini_set('session.cookie_lifetime', 60 * 60 * 24 * 100);
+  ini_set('session.cookie_minlifetime', 60 * 60 * 24 * 100);
   ini_set('session.gc_maxlifetime', 60 * 60 * 24 * 100);
   session_start();
   if(isset($_SESSION['unique_id'])){
-    header("location: users.php");
+    header("location: dashboard.php");
   };
   include_once "header.php";
 ?>
@@ -23,13 +23,17 @@
           </div>
         </div>
         <div class="field input">
-          <label>Choose a username *</label>
+        <?php
+          if(isset($_GET['bye']) && !empty($_GET['bye']) && $_GET['bye'] == 'true'){
+            echo '<p class="bye">Data deleted successfully.<br><br> Delete browser cookies to remove all preferences.</p><p><br>';
+          }
+        ?>
+          <label>Choose a username *</label></p>
           <input type="text" name="email" placeholder="Any username" required>
         </div>
         <div class="field input">
           <label>Password *</label>
           <input type="password" name="password" placeholder="Enter new password" required>
-          <i class="fas fa-eye"></i>
         </div>
         <div class="field image">
           <p>Choose a profile image (optional)<p>
@@ -50,12 +54,7 @@
   <script src="javascript/pass-show-hide.js"></script>
   <script src="javascript/signup.js"></script>
   <script type="text/javascript">
-    const actualBtn = document.getElementById('image-subission-input');
-    const fileChosen = document.getElementById('file-chosen');
 
-    actualBtn.addEventListener('change', function(){
-      fileChosen.textContent = 'Profile image: ' + this.files[0].name
-    })
   </script>
 </body>
 </html>

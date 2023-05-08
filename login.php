@@ -4,7 +4,7 @@
   ini_set('session.gc_minlifetime', 60 * 60 * 24 * 100);
   session_start();
   if(isset($_SESSION['unique_id'])){
-    header("location: users.php");
+    header("location: dashboard.php");
   }
   include_once "header.php"; 
 ?>

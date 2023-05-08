@@ -26,6 +26,7 @@
           <p><?php echo $row['status']; ?></p>
         </div>
       </header>
+      <p id="chatbox-scroll-mode" class="chatbox-scroll-mode"></p>
       <div class="chat-box">
       </div>
       <form action="#" class="typing-area">
@@ -38,5 +39,6 @@
 
   <script src="javascript/chat.js"></script>
   <scripts src="javascript/set-theme.js"></script>
+
 </body>
 </html>
