@@ -1,15 +1,9 @@
 <?php
 
-// By G-Team https://glitcher.me
+// @author G-Team https://glitcher.me
+// Modified by Zqfd
 
-// Set your database connection details here
-$host = 'localhost';
-$username = '';
-$password = '';
-$database = '';
-
-// Connect to the database
-$conn = mysqli_connect($host, $username, $password, $database);
+include_once 'config.php';
 
 // Check if the connection was successful
 if (!$conn) {

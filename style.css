@@ -42,6 +42,29 @@
   --status-dot-color-offline: #b0b0b0;
 }
 
+/*WIP adding a new theme*/
+.g /*from G-team: https://glitcher.me*/ {
+  --bg-color: #000;
+  --secondary: #222;
+  --text: #ddd;
+  --buttons-bg-color: #7f0000;
+  --buttons-text: #ddd;
+  --chatbox-bg:  #1a1a1a;
+  --back-icon-color: red;
+  --search-btn-bg: #7f0000;
+  --search-btn-img: url(/icons/search.png);
+  --incoming-msg-bg-color:#333;
+  --outgoing-msg-bg-color: #7f0000;
+  --incoming-msg-text: #ddd;
+  --outgoing-msg-text: #ddd;
+  --typing-area: #111;
+  --typing-area-text: #fff;
+  --input-background: #111;
+  --input-text: #fff;
+  --search-input-text: #fff;
+  --search-input: #111;
+}
+
 /*END*/
 
 *{
@@ -123,6 +146,18 @@ body{
 
 /*END*/
 
+.are-you-sure-list{
+  display: flex;
+  background: var(--buttons-bg-color);
+  color: var(--buttons-text);
+  outline: none;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 5px;
+  font-size: 17px;
+  margin :40px;
+}
+
 a{
   text-decoration: none !important;
   color: var(--links-color);
@@ -130,6 +165,7 @@ a{
 
 .footer{
   margin: 20px;
+  font-size: 10px;
 }
 
 .footer p{
@@ -180,6 +216,15 @@ a{
 
 .image-subission-input{
   display: none
+}
+
+.bye{
+  display: block;
+  padding: 10px;
+  margin: auto;
+  border-radius: 10px;
+  background-color: var(--buttons-bg-color);
+  color: var(--buttons-text);
 }
 
 .form header{
@@ -437,13 +482,8 @@ a{
 }
 
 .dustbin{
-  text-align: right;
-  color: var(--text);
-  min-height: 20px;
-  max-height: 20px;
-  width: 100%;
-  font-size: 10px;
-  margin-left: calc(100% - 75px);
+  color: gray;
+  font-weight: bold;
 }
 
 .dustbin:hover{
@@ -474,6 +514,36 @@ a{
   height: 45px;
   width: 45px;
   margin: 0 15px;
+}
+
+.date_outgoing{
+  text-align: right;
+  display: block;
+  color: Gray;
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+.date_incoming{
+  text-align: left;
+  display: block;
+  color: Gray;
+  font-size: 10px;
+  margin-top: 5px;
+
+}
+
+.nuke{
+  margin-left: 120px;
+  border-radius: 360px;
+}
+
+.nuke-img{
+    cursor: pointer;
+}
+
+.nuke-img:hover{
+  background: #7f0000;
 }
 
 .chat-area header .details span{
@@ -541,6 +611,16 @@ a{
   margin-right: auto;
   margin-left: 10px;
   max-width: calc(100% - 130px);
+}
+
+#chatbox-scroll-mode{
+  position: fixed;
+  margin: auto 30px;
+  z-index: 1;
+  color: var(--text);
+  background: var(--secondary);
+  border: solid 1px;
+  border-radius: 5px;
 }
 
 .incoming .details p{
