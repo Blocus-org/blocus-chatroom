@@ -13,10 +13,6 @@
 $admin_interface = true; // If "true", you will be asked to create an admin account in update.php script
 $admin_username = 'SALUE';
 $admin_password = 'BONJOUREATOIAUSSI';
-$admin_username = 'SALUE';
-$admin_password = 'BONJOUREATOIAUSSI';
-$admin_username = 'SALUE';
-$admin_password = 'BONJOUREATOIAUSSI';
 $admin_mail = "blocus-org@proton.me"; // Email adress for privacy policy contact, change it to match yours
 
 // Database config:

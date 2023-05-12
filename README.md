@@ -17,6 +17,10 @@ Instant messaging app with HTML/CSS JavaScript and PHP
 - Even more coming soon (Contacts, persistant area, intagrated proxies, etc)
 
 
+## Thanks to contributors
+
+- [G-team](https://glitcher.me)
+
 ## How to use
 - Go visit the official instance [chatroom.blocus.ch](https://chatroom.blocus.ch)
 - Download the [android app](https://github.com/blocus-org/blocus-chatroom-android/tags) (Alpha)
@@ -32,7 +36,6 @@ You need to setup an apache/php/mariadb webserver
 ## <a name='linux'>Linux</a>
 
 [Here](https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mariadb-php-lamp-stack-on-debian-11) 's a complete tutorial for setting up your own php/mysql/apache webserver .<br> Made by digital ocean for Debian 11.
-
 
 
 ## <a name='config'> Config</a>

@@ -2,8 +2,11 @@ const form = document.querySelector(".typing-area"),
 incoming_id = form.querySelector(".incoming_id").value,
 inputField = form.querySelector(".input-field"),
 sendBtn = form.querySelector("button"),
-chatBox = document.querySelector(".chat-box")
-chatBoxScrollMode = document.getElementById("chatbox-scroll-mode")
+chatBox = document.querySelector(".chat-box"),
+alertBox = document.getElementById("chatbox-scroll-mode"),
+nukeButton = document.getElementById("nuke-img"),
+notifications_outgoing = new Audio("audio/outgoing.wav"),
+notifications_incoming = new Audio("audio/incoming.wav")
 
 form.onsubmit = (e)=>{
     e.preventDefault()
@@ -33,26 +36,37 @@ sendBtn.onclick = ()=>{
     refreshMessages()
     let xhr = new XMLHttpRequest()
     xhr.open("POST", "php/insert-chat.php", true)
-    xhr.onload = ()=>{
-      if(xhr.readyState === XMLHttpRequest.DONE){
-          if(xhr.status === 200){
-              inputField.value = ""
-              scrollToBottom()
+    if(inputField.value !== ""){
+        xhr.onload = ()=>{
+          if(xhr.readyState === XMLHttpRequest.DONE){
+              if(xhr.status === 200){
+                  inputField.value = ""
+                  scrollToBottom()
+                  notifications_outgoing.play()
+              }
           }
-      }
+        }
     }
     let formData = new FormData(form)
     xhr.send(formData)
 }
+
+nukeButton.onmouseenter = ()=>{
+    alertBox.innerHTML = "Click to delete all messages"
+}
+
+nukeButton.onmouseleave = ()=>{
+    alertBox.innerHTML = ""
+}
+
 chatBox.onmouseenter = ()=>{
-    setTimeout(function() {}, 10)
     chatBox.classList.add("active")
-    chatBoxScrollMode.innerHTML = 'keep your mouse inside the chat box or touch it to scroll'
+    alertBox.innerHTML = "Scrolling mode"
 }
 
 chatBox.onmouseleave = ()=>{
     chatBox.classList.remove("active")
-    chatBoxScrollMode.innerHTML = ""
+    alertBox.innerHTML = ""
 }
 
 const refreshMessages = () =>{
@@ -84,4 +98,4 @@ function scrollToBottom(){
 
 refreshMessages()
 scrollToBottom()
-setInterval(refreshMessages, 1000)
+setInterval(refreshMessages, 5000)
