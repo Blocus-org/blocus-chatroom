@@ -39,7 +39,7 @@
           <p><?php echo $row['status']; ?></p>
         </div>
         <div id="nuke"class="nuke">
-            <img id="nuke-img" class="dash-icon nuke-img" src="php/images/icons/nuke.png" onclick="location.href = 'chat.php?user_id=<?= sec($_GET['user_id'])?>&nuke_conv=true'">
+            <img id="nuke-img" class="dash-icon nuke-img" src="php/images/icons/nuke.png" onclick="location.href = 'chat.php?user_id=<?= sec($user_id)?>&nuke_conv=true'">
         </div>
       </header>
       <p id="chatbox-scroll-mode" class="chatbox-scroll-mode"></p>
