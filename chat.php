@@ -20,14 +20,14 @@
           }
           if(isset($_GET['delete_message']) && !empty($_GET['delete_message'])){
             if ($_GET['user_id'] == $row['unique_id']) {
-              $msg = sec($_GET['delete_message']);
+              $msg = mysqli_real_escape_string(sec($_GET['delete_message']));
               $sql = mysqli_query($conn, "DELETE FROM messages WHERE msg_id = {$msg}");
             }
           }
           if(isset($_GET['nuke_conv']) && !empty($_GET['nuke_conv']) && $_GET['nuke_conv'] == "true"){
             if ($_GET['user_id'] == $row['unique_id']) {
               $outgoing_id = $_SESSION['unique_id'];
-              $incoming_id = sec($_GET['user_id']);
+              $incoming_id = mysqli_real_escape_string($conn, sec($_GET['user_id']));
               $sql = mysqli_query($conn, "DELETE FROM messages WHERE (outgoing_msg_id = {$outgoing_id} AND incoming_msg_id = {$incoming_id}) OR (outgoing_msg_id = {$incoming_id} AND incoming_msg_id = {$outgoing_id})");
             }
           }

@@ -1,5 +1,5 @@
 <?php
-  // Update.php alpha-1.0.0 --WIP
+  // Update.php alpha-1.0.1 --WIP
   //
   // /!\ WARNING SENSIBLE DATA use with caution and remove the file after use!!
   // This file only check if everything is ok (at this time), it will soon connect to the official repository to update automaticly.
@@ -7,6 +7,7 @@
   //
   // @Blocus-org
   // AGPL-v3.0-or-later
+
   session_start();
   include "php/config.php";
   
@@ -103,33 +104,38 @@
         $ran_id = rand(time(), 100000000);
         $fname = mysqli_real_escape_string($conn, sec($_POST['fname']));
         $lname = mysqli_real_escape_string($conn, sec($_POST['lname']));
-        $unencrypted_admin_password = sec($_POST['admin-passwd']);
-        $admin_username = sec($_POST['admin-username']);
-        $admin_password = password_hash(sec($_POST['admin-passwd']),PASSWORD_DEFAULT);
-        $data1 = "\$admin_password = '$unencrypted_admin_password';";
-        $data2 = "\$admin_username = '$admin_username';";
+        $unencrypted_password = sec($_POST['admin-passwd']);
+        $username = sec($_POST['admin-username']);
+        $password = password_hash($unencrypted_password, PASSWORD_DEFAULT);
+        $data1 = "\$admin_password = '$unencrypted_password';";
+        $data2 = "\$admin_username = '$username';";
         $filecontent = file_get_contents('php/config.php');
-        $pos1 = strpos($filecontent, '$admin_mail');
+        $pos = strpos($filecontent, '$admin_mail');
         $status = "Active now";
-        $filecontent = substr($filecontent, 0, $pos1)."".$data1."\r\n".substr($filecontent, $pos1);
-        $filecontent = substr($filecontent, 0, $pos1)."".$data2."\r\n".substr($filecontent, $pos1);
-        file_put_contents("php/config.php", $filecontent);
-        $sql = mysqli_query($conn, "SELECT * FROM users WHERE email = '{$admin_username}'");
+        $sql = mysqli_query($conn, "SELECT * FROM users WHERE email = '{$username}'");
         if(mysqli_num_rows($sql) > 0){
-            echo '<span style="color:red;">'. $admin_username .' - This username already exist!</span>';
+            echo '<span style="color:red;">'. $username .' - This username already exist!</span>';
         }else{
-          $sql2 = mysqli_query($conn, "INSERT INTO users (unique_id, fname, lname, email, password, img, status, last_activity) VALUES ({$ran_id}, '{$fname}','{$lname}', '{$admin_username}', '{$admin_password}', 'admin.png', '{$status}', '{$last_activity}')");
+          if (!isset($admin_password) && !isset($admin_username)) {
+            $filecontent = substr($filecontent, 0, $pos)."".$data1."\r\n".substr($filecontent, $pos);
+            $filecontent = substr($filecontent, 0, $pos)."".$data2."\r\n".substr($filecontent, $pos);
+            file_put_contents("php/config.php", $filecontent);
+          }else{
+            die();
+          }
+          $sql2 = mysqli_query($conn, "INSERT INTO users (unique_id, fname, lname, email, password, img, status, last_activity) VALUES ({$ran_id}, '{$fname}','{$lname}', '{$username}', '{$password}', 'admin.png', '{$status}', '{$last_activity}')");
           if($sql2){
-            $select_sql2 = mysqli_query($conn, "SELECT * FROM users WHERE email = '{$admin_username}'");
+            $select_sql2 = mysqli_query($conn, "SELECT * FROM users WHERE email = '{$username}'");
             if(mysqli_num_rows($select_sql2) > 0){
                 $result = mysqli_fetch_assoc($select_sql2);
                 $_SESSION['unique_id'] = $result['unique_id'];
-                echo '<span style="color:green;">Success!<br><br> Your are logged as admin: '. $admin_username .' <a href="index.php">Go to app -></a></span';
+                echo '<span style="color:green;">Success!<br><br> Your are logged as admin: '. $username .' <a href="index.php">Go to app -></a></span';
+                header("location: update.php");
             }
           }
         }
       }else{
-        echo '<span style="color:red;">Password must be larger than 10 characters for admin account.</span>';
+        echo '<span style="color:red;">Password must be larger than 10 characters for the admin account!</span>';
       }
     }else{
       echo '<span style="color:red;">All input fields are required!</span>';
