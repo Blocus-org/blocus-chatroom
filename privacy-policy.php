@@ -32,7 +32,7 @@ include_once "header.php"; ?>
         <p class="privacy-p">When you delete a message or if a message is deleted automaticly, it will be deleted from the database, there is no way to get it back.</p><br>
         <h3>Removal of data</h3><br>
         <p class="privacy-p">To remove data stored in your browser, you can use your browser's cookie-related controls to delete the data.</p><br>
-        <p class="privacy-p">To remove data that has been stored in the website's database, you can use the "Wipe account and data" button in your dashboard.</p>
+        <p class="privacy-p">To remove data that has been stored in the website's database, you can use the "Delete account and data" button in your dashboard.</p>
       </div>
     </section>
 <?php

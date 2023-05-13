@@ -4,7 +4,7 @@
     if(isset($_SESSION['unique_id'])){
         include_once "config.php";
         $outgoing_id = $_SESSION['unique_id'];
-        $incoming_id = mysqli_real_escape_string($conn, $_POST['incoming_id']);
+        $incoming_id = mysqli_real_escape_string($conn, sec($_POST['incoming_id']));
         $output = "";
         $sql = "SELECT * FROM messages LEFT JOIN users ON users.unique_id = messages.outgoing_msg_id
                 WHERE (outgoing_msg_id = {$outgoing_id} AND incoming_msg_id = {$incoming_id})
@@ -13,19 +13,27 @@
         if(mysqli_num_rows($query) > 0){
             while($row = mysqli_fetch_assoc($query)){
                 $msg = decrypt($row['msg']);
+                $timestamp = $row['msg_date'];
+                $date = date( "H:i:s", $timestamp );
                 $msg_id = $row['msg_id'];
                 if($row['outgoing_msg_id'] === $outgoing_id){
-                    $output .= '<div class="chat outgoing" onclick="displayMessageMenu()">
+                    $output .= '<div id="outgoing" class="chat outgoing">
                                 <div class="details">
-                                    <p>'.sec($msg).'<br></p><a style="display: none;" class="dustbin" id="dusbin" href="user.php?user_id='.$incoming_id.'&delete_message='.$msg_id.'">Delete message</a>
+                                    <p>'.sec($msg).'<br>
+                                        <span class="date_outgoing">'.$date.' 
+                                            <a class="dustbin" id="dusbin" href="chat.php?user_id='.$incoming_id.'&delete_message='.$msg_id.'">
+                                                Delete
+                                            </a>
+                                        </span>
+                                    </p>
                                 </div>
                                 </div>';
                 }else{
-                    $output .= '<div class="chat incoming">
-                                <audio src="audio/notifications.mp3"></audio>
+                    $output .= '<div id="incoming" class="chat incoming">
                                 <img src="php/images/'.$row['img'].'" alt="">
                                 <div class="details">
-                                    <p>'.sec($msg).'</p>
+                                    <p>'.sec($msg).'<br><span class="date_incoming">'.$date.'</span></p>
+                                    
                                 </div>
                                 </div>';
                 }

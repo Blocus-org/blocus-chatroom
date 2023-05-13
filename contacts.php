@@ -21,6 +21,9 @@ include_once "header.php"; ?>
         <a href="php/logout.php?logout_id=<?php echo $row['unique_id']; ?>" class="logout"><p>Logout</p></a>
         <script src="javascript/toggle-theme.js"></script>
       </header>
+
+      <br><div><p>Not available in <?= $app_version?>, work in progress<p></div>
+        
     </section>
 <?php
   include 'footer.php';

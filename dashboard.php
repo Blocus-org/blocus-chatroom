@@ -26,12 +26,12 @@ include_once "header.php"; ?>
       </header>
       <div class="dashboard">
         <ul class="dashboard-list">
-          <li class="dashboard-list-line" onclick="location.href = 'users.php'"><img class="dash-icon" src="icons/icon.png"> <p>Chat with somone</p></li><br>
-          <li class="dashboard-list-line" onclick="location.href = 'contacts.php'"><img class="dash-icon" src="icons/contacts.png"><p>Contacts</p></li><br>
-          <li class="dashboard-list-line" onclick="location.href = 'settings.php'"><img class="dash-icon" src="icons/settings.png"><p>Settings</p></li><br>
-          <li class="dashboard-list-line" onclick="toggleTheme()" id="slider"><img class="dash-icon" src="icons/themes.png"><p>Theme (Light - Blocus)</p></li><br>
-          <li class="dashboard-list-line" onclick="location.href = 'wipe.php'"><img class="dash-icon" src="icons/wipe.png"><p>Wipe account and data</p></li><br>
-          <li class="dashboard-list-line" onclick="location.href = 'privacy-policy.php'"><img class="dash-icon" src="icons/privacy.png"><p>Privacy policy</p></a></li>
+          <li class="dashboard-list-line" onclick="location.href = 'users.php'"><img class="dash-icon" src="php/images/icons/icon.png"> <p>Chat with someone</p></li><br>
+          <li class="dashboard-list-line" onclick="location.href = 'contacts.php'"><img class="dash-icon" src="php/images/icons/contacts.png"><p>Contacts</p></li><br>
+          <li class="dashboard-list-line" onclick="location.href = 'settings.php'"><img class="dash-icon" src="php/images/icons/settings.png"><p>Settings</p></li><br>
+          <li class="dashboard-list-line" onclick="toggleTheme()" id="slider"><img class="dash-icon" src="php/images/icons/themes.png"><p>Theme (Light - Blocus)</p></li><br>
+          <li class="dashboard-list-line" onclick="location.href = 'wipe.php'"><img class="dash-icon" src="php/images/icons/wipe.png"><p>Delete account and data</p></li><br>
+          <li class="dashboard-list-line" onclick="location.href = 'privacy-policy.php'"><img class="dash-icon" src="php/images/icons/privacy.png"><p>Privacy policy</p></a></li>
         </ul>
       </div>
       <div class="users-list">
