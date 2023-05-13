@@ -15,8 +15,8 @@ $admin_mail = "blocus-org@proton.me"; // Email adress for privacy policy contact
 
 // Database config:
 $hostname = "localhost";
-$username = "zqfd";
-$password = "AFozeRZ82199";
+$username = "";
+$password = "";
 $dbname = "blocus_chat_db";
 
 // Footer config:
