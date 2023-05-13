@@ -20,7 +20,7 @@
           }
           if(isset($_GET['delete_message']) && !empty($_GET['delete_message'])){
             if ($_GET['user_id'] == $row['unique_id']) {
-              $msg = mysqli_real_escape_string(sec($_GET['delete_message']));
+              $msg = mysqli_real_escape_string($conn, sec($_GET['delete_message']));
               $sql = mysqli_query($conn, "DELETE FROM messages WHERE msg_id = {$msg}");
             }
           }
