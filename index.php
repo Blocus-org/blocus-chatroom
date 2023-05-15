@@ -4,14 +4,14 @@
   ini_set('session.gc_maxlifetime', 60 * 60 * 24 * 100);
   session_start();
   if(isset($_SESSION['unique_id'])){
-    header("location: dashboard.php");
+    header("location: dashboard");
   };
   include_once "header.php";
 ?>
 <body>
   <div class="wrapper">
     <section class="form signup">
-      <header>Sign up<script src="javascript/toggle-theme.js"></script></header>
+      <header>Sign up</header>
       <form action="#" method="POST" enctype="multipart/form-data" autocomplete="off">
         <div class="error-text"></div>
         <div class="name-details">
@@ -33,10 +33,12 @@
         </div>
         <div class="field input">
           <label>Password *</label>
-          <input type="password" name="password" placeholder="Enter new password" required>
-        </div>
+          <input class="passwd" type="password" name="password" placeholder="Enter new password" required>
+          <div class="show-hide">
+            <span class="eye-leg"><p id="eye"><img class="dash-icon" src="php/images/icons/eye.png"></p>
+          </div>
         <div class="field image">
-          <p>Choose a profile image (optional)<p>
+          <p><br>Choose a profile image (optional)<p>
           <label class="image-subission-button" >Browse...
             <input id="image-subission-input"class="image-subission-input" type="file" name="image" accept="image/x-png ,image/jpeg,image/jpg">
           </label><span id="file-chosen">No files.</span>
@@ -45,7 +47,7 @@
           <input type="submit" name="submit" value="Continue to Chat">
         </div>
       </form>
-      <div class="link">Already signed up? <a class="login-link" href="login.php">Login now</a></div>
+      <div class="link">Already signed up? <a class="login-link" href="login">Login now</a></div>
     </section>
 <?php
   include 'footer.php';
