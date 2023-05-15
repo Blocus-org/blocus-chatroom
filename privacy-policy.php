@@ -2,7 +2,7 @@
   session_start();
   include_once "php/config.php";
   if(!isset($_SESSION['unique_id'])){
-    header("location: login.php");
+    header("location: login");
   }
 include_once "header.php"; ?>
 <body>
@@ -10,7 +10,7 @@ include_once "header.php"; ?>
     <section class="users">
       <header>
         <div class="content">
-          <a href="dashboard.php" class="dashboard-btn">Dashboard</a>
+          <a href="dashboard" class="dashboard-btn">Dashboard</a>
         </div>
         <a href="php/logout.php?logout_id=<?php echo $row['unique_id']; ?>" class="logout"><p>Logout</p></a>
         <script src="javascript/toggle-theme.js"></script>

@@ -2,7 +2,7 @@
   session_start();
   include_once "php/config.php";
   if(!isset($_SESSION['unique_id'])){
-    header("location: login.php");
+    header("location: login");
   }
 ?>
 <?php include_once "header.php"; ?>
@@ -16,7 +16,7 @@
           if(mysqli_num_rows($sql) > 0){
             $row = mysqli_fetch_assoc($sql);
           }else{
-            header("location: users.php");
+            header("location: users");
           }
           if(isset($_GET['delete_message']) && !empty($_GET['delete_message'])){
             if ($_GET['user_id'] == $row['unique_id']) {
@@ -32,14 +32,14 @@
             }
           }
         ?>
-        <a href="users.php" class="backicon">←</a>
+        <a href="users" class="backicon">←</a>
         <img src="php/images/<?php echo $row['img']; ?>" alt="">
         <div class="details">
           <span><?php echo $row['email']; ?></span>
           <p><?php echo $row['status']; ?></p>
         </div>
         <div id="nuke"class="nuke">
-            <img id="nuke-img" class="dash-icon nuke-img" src="php/images/icons/nuke.png" onclick="location.href = 'chat.php?user_id=<?= sec($user_id)?>&nuke_conv=true'">
+            <img id="nuke-img" class="dash-icon nuke-img" src="php/images/icons/nuke.png" onclick="location.href = 'chat?user_id=<?= sec($user_id)?>&nuke_conv=true'">
         </div>
       </header>
       <p id="chatbox-scroll-mode" class="chatbox-scroll-mode"></p>
