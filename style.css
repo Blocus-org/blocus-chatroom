@@ -1,5 +1,4 @@
 
-
 /*Themes variable: you can easily setup your own colors here. Add your themes, and create pull request, it will be added to the main instance!*/
 
 :root {
@@ -42,8 +41,8 @@
   --status-dot-color-offline: #b0b0b0;
 }
 
-/*WIP adding a new theme*/
-.g /*from G-team: https://glitcher.me*/ {
+/* -- WIP need to adjust toggleTheme() function*/
+.g /* from G-team: https://glitcher.me */ {
   --bg-color: #000;
   --secondary: #222;
   --text: #ddd;
@@ -146,6 +145,40 @@ body{
 
 /*END*/
 
+.user-admin-icon{
+  display: inline;
+  height: 70px;
+  width: auto;
+  margin: auto;
+  margin-left: 5px;
+
+}
+
+.user-admin-int{
+  text-align: center;
+  width: 96%;
+  border-radius: 8px;
+  display: block;
+  margin: auto 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  background: var(--buttons-bg-color);
+}
+
+.user-admin-int a{
+    display: flex;
+    border-radius: 8px;
+    width: 40%;
+}
+
+.user-admin-int a:hover{
+    color: #ddd;
+}
+
+.user-admin-int a p{
+    margin-left: 5px;
+}
+
 .are-you-sure-list{
   display: flex;
   background: var(--buttons-bg-color);
@@ -164,12 +197,21 @@ a{
 }
 
 .footer{
-  margin: 20px;
+  display: flex;
   font-size: 10px;
+  width: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  text-align: center;
 }
 
 .footer p{
-  display: inline-block;
+  margin-left: 5px;
+  padding: 1px;
+  width: 100%;
+  text-overflow: clip;
 }
 
 .source_footer{
@@ -187,6 +229,23 @@ a{
 }
 
 /* Login & Signup Form CSS Start */
+
+.show-hide span{
+  text-align: center;
+  display: block;
+  margin-bottom: 5px !important;
+}
+
+#eye{
+  float: right;
+  right: 5px;
+  width: 15%;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: -35px;
+  z-index: 30;
+}
+
 .form{
   padding: 25px 30px;
 }
@@ -539,7 +598,8 @@ a{
 }
 
 .nuke-img{
-    cursor: pointer;
+  padding: 1px;
+  cursor: pointer;
 }
 
 .nuke-img:hover{

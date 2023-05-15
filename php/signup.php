@@ -29,6 +29,7 @@
                         echo "Something went wrong. Please try again!";
                     }
                 }else{
+                    $last_activity = time();
                     $img = $_FILES['image'];
                     $img_name = sec($img['name']);
                     $img_type = $img['type'];
@@ -45,8 +46,8 @@
                             $ran_id = rand(time(), 100000000);
                             $status = "Active now";
                             $encrypt_pass = password_hash($password, PASSWORD_DEFAULT);
-                            $insert_query = mysqli_query($conn, "INSERT INTO users (unique_id, fname, lname, email, password, img, status)
-                            VALUES ({$ran_id}, '{$fname}','{$lname}', '{$email}', '{$encrypt_pass}', '{$new_img_name}', '{$status}')");
+                            $insert_query = mysqli_query($conn, "INSERT INTO users (unique_id, fname, lname, email, password, img, status, last_activity)
+                            VALUES ({$ran_id}, '{$fname}','{$lname}', '{$email}', '{$encrypt_pass}', '{$new_img_name}', '{$status}', '{$last_activity}')");
                             if($insert_query){
                                 $select_sql2 = mysqli_query($conn, "SELECT * FROM users WHERE email = '{$email}'");
                                 if(mysqli_num_rows($select_sql2) > 0){
