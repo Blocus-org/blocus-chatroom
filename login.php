@@ -4,7 +4,7 @@
   ini_set('session.gc_minlifetime', 60 * 60 * 24 * 100);
   session_start();
   if(isset($_SESSION['unique_id'])){
-    header("location: dashboard.php");
+    header("location: dashboard");
   }
   include_once "header.php"; 
 ?>
@@ -20,14 +20,16 @@
         </div>
         <div class="field input">
           <label>Password</label>
-          <input type="password" name="password" placeholder="Enter your password" required>
-          <i class="fas fa-eye"></i>
+          <input class="passwd" type="password" name="password" placeholder="Enter your password" required>
+          <div class="show-hide">
+            <span class="eye-leg"><p id="eye"><img class="dash-icon" src="php/images/icons/eye.png"></p>
+          </div>
         </div>
         <div class="field button">
           <input class ='logout'type="submit" name="submit" value="Continue to Chat">
         </div>
       </form>
-      <div class="link">Not yet signed up? <a class="signup-link" href="index.php">Signup now</a></div>
+      <div class="link">Not yet signed up? <a class="signup-link" href="index">Signup now</a></div>
     </section>
 <?php
   include 'footer.php';

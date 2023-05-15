@@ -10,11 +10,11 @@ Instant messaging app with HTML/CSS JavaScript and PHP
 - Sign up without phone number and without mail.
 - All messages in database are encrypted with openssl (AES-256-CTR sha256)
 - All messages are deleted after 24h
+- User-friendly admin interface (manage database, users, etc.)
 - Fast configuration on a running web server
 - Android friendly interface
-- Easy config
-- Made with the less JavaScript possible 
-- Even more coming soon (Contacts, persistant area, intagrated proxies, etc)
+- Easy config 
+- Even more coming soon (Contacts, persistant area, proxies, etc)
 
 
 ## Thanks to contributors
@@ -38,7 +38,7 @@ You need to setup an apache/php/mariadb webserver
 [Here](https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mariadb-php-lamp-stack-on-debian-11) 's a complete tutorial for setting up your own php/mysql/apache webserver .<br> Made by digital ocean for Debian 11.
 
 
-## <a name='config'> Config</a>
+## <a name='config'> Web server is setup</a>
 
 - Open the config file (php/config.php)
 - Set username and password for database
@@ -46,5 +46,6 @@ You need to setup an apache/php/mariadb webserver
 - Create database (same name as you choosed in config.php)
 - Put all files in your webserver root
 - Import .sql file with adminer (blocus_chat_db.sql) (http://localhost/adminer.php)
-- Visit http://localhost
+- If you enabled the admin interface, visit https://your-web-server.adress.com/update.php to check requirements and create your admin account
+- You are all done! Visit https://your-web-server.adress.com/
 

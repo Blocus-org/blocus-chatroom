@@ -31,12 +31,12 @@
             if($sql2 && $sql3){
                 session_unset();
                 session_destroy();
-                header("location: ../index.php?bye=true");
+                header("location: ../index?bye=true");
             }
         }else{
-            header("location: ../dashboard.php?del=false");
+            header("location: ../dashboard?del=false");
         }
     }else{  
-        header("location: ../login.php?isconnected=false");
+        header("location: ../login?isconnected=false");
     }
 ?>

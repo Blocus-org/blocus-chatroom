@@ -35,7 +35,7 @@ inputField.onclick = ()=>{
 sendBtn.onclick = ()=>{
     refreshMessages()
     let xhr = new XMLHttpRequest()
-    xhr.open("POST", "php/insert-chat.php", true)
+    xhr.open("POST", "php/insert-chat", true)
     if(inputField.value !== ""){
         xhr.onload = ()=>{
           if(xhr.readyState === XMLHttpRequest.DONE){
@@ -71,7 +71,7 @@ chatBox.onmouseleave = ()=>{
 
 const refreshMessages = () =>{
     let xhr = new XMLHttpRequest()
-    xhr.open("POST", "php/get-chat.php", true)
+    xhr.open("POST", "php/get-chat", true)
     xhr.onload = ()=>{
       if(xhr.readyState === XMLHttpRequest.DONE){
           if(xhr.status === 200){

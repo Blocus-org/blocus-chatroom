@@ -1,6 +1,6 @@
 <?php
 	include_once "config.php";
-	define("encryption_method", "AES-256-CTR");
+	define("encryption_method", $algorithm);
 	define("key", $encryption_key);
 
 	function encrypt($data) {

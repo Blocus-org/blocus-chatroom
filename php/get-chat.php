@@ -20,8 +20,8 @@
                     $output .= '<div id="outgoing" class="chat outgoing">
                                 <div class="details">
                                     <p>'.sec($msg).'<br>
-                                        <span class="date_outgoing">'.$date.' 
-                                            <a class="dustbin" id="dusbin" href="chat.php?user_id='.$incoming_id.'&delete_message='.$msg_id.'">
+                                        <span class="date_outgoing">'.$date.' UTC
+                                            <a class="dustbin" id="dusbin" href="chat?user_id='.$incoming_id.'&delete_message='.$msg_id.'">
                                                 Delete
                                             </a>
                                         </span>
@@ -32,14 +32,14 @@
                     $output .= '<div id="incoming" class="chat incoming">
                                 <img src="php/images/'.$row['img'].'" alt="">
                                 <div class="details">
-                                    <p>'.sec($msg).'<br><span class="date_incoming">'.$date.'</span></p>
+                                    <p>'.sec($msg).'<br><span class="date_incoming">'.$date.' UTC</span></p>
                                     
                                 </div>
                                 </div>';
                 }
             }
         }else{
-            $output .= '<div class="text">No messages are available. Once you send message they will appear here.</div>';
+            $output .= '<div class="text">No messages are available. Once you send messages, they will appear here.</div>';
         }
         echo $output;
     }else{

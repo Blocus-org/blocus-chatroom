@@ -2,9 +2,9 @@
   session_start();
   include_once "php/config.php";
   if(!isset($_SESSION['unique_id'])){
-    header("location: login.php");
+    header("location: login");
   }
-include_once "header.php"; ?>
+include_once "header"; ?>
 <body>
   <div class="wrapper">
     <section class="users">
@@ -16,9 +16,9 @@ include_once "header.php"; ?>
               $row = mysqli_fetch_assoc($sql);
             }
           ?>
-          <a href="dashboard.php" class="dashboard-btn">Dashboard</a>
+          <a href="dashboard" class="dashboard-btn">Dashboard</a>
         </div>
-        <a href="php/logout.php?logout_id=<?php echo $row['unique_id']; ?>" class="logout"><p>Logout</p></a>
+        <a href="php/logout?logout_id=<?php echo $row['unique_id']; ?>" class="logout"><p>Logout</p></a>
         <script src="javascript/toggle-theme.js"></script>
       </header>
 
