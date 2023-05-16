@@ -5,11 +5,13 @@
   
   if (!isset($_SESSION['unique_id'])) {
     header("location:../login"); 
-  }elseif (!isset($admin_unique_id) && !isset($admin_username) && !isset($admin_password) OR $admin_interface === false) {
+  }elseif (!isset($admin_unique_id) && 
+    !isset($admin_username) && !isset($admin_password) || $admin_interface === false) {
     if ($_SESSION['unique_id'] !== $admin_unique_id) {
       header("location:../dashboard");
     }else {
-    echo "Admin interface is disabled. Take a look to php/config.php to manage admin interface.<br><a href='../dashboard.php'>go back to dashboard</a>";
+    echo "Admin interface is disabled. Take a look to php/config.php to manage admin interface.
+    <br><a href='../dashboard.php'>go back to dashboard</a>";
     }
     die();
   }elseif ($_SESSION['unique_id'] !== $admin_unique_id) {
@@ -49,7 +51,10 @@
         </div>
         <a href="../php/logout?logout_id=<?php echo $row['unique_id']; ?>" class="logout">Logout</a>
       </header>
-      <br><p class="use"><a href="user-manager"><img class="dash-icon nuke-img" src="../php/images/icons/refresh.png" alt="refresh icon"></a></p><br><p><span style="color:red;">Wanring</span>: Deleting an account is definitive!</p><br>
+      <br><p class="use"><a href="user-manager">
+        <img class="dash-icon nuke-img" src="../php/images/icons/refresh.png" alt="refresh icon"></a></p><br>
+        <p>
+          <span style="color:red;">Wanring</span>: Deleting an account is definitive!</p><br>
       <p><?= $alert_box; ?></p>
       <div class="users-list">
 

@@ -46,11 +46,21 @@
       <div class="dashboard">
         <ul class="dashboard-list">
           <h1>Admin interface</h1><br><br>
-          <li class="dashboard-list-line" onclick="location.href = '../users'"><img class="dash-icon" src="../php/images/icons/icon.png" alt="dasboard icon"> <p>Chat with someone</p></li><br>
-          <li class="dashboard-list-line" onclick="location.href = '../contacts'"><img class="dash-icon" src="../php/images/icons/contacts.png" alt="dasboard icon"><p>Contacts</p></li><br>
-          <li class="dashboard-list-line" onclick="location.href = 'user-manager'"><img class="dash-icon" src="../php/images/icons/user.png" alt="dasboard icon"><p>Manage users</p></li><br>
-          <li class="dashboard-list-line" onclick="location.href = 'database'"><img class="dash-icon" src="../php/images/icons/database.png" alt="dasboard icon"><p>Manage database</p></a></li><br>
-          <li class="dashboard-list-line" onclick="toggleTheme()" id="slider"><img class="dash-icon" src="../php/images/icons/themes.png" alt="dasboard icon"><p>Theme (Light - Blocus)</p></li><br>
+          <li class="dashboard-list-line" onclick="location.href = '../users'">
+            <img class="dash-icon" src="../php/images/icons/icon.png" alt="dasboard icon"> <p>Chat with someone</p>
+          </li><br>
+          <li class="dashboard-list-line" onclick="location.href = '../contacts'">
+            <img class="dash-icon" src="../php/images/icons/contacts.png" alt="dasboard icon"><p>Contacts</p>
+          </li><br>
+          <li class="dashboard-list-line" onclick="location.href = 'user-manager'">
+            <img class="dash-icon" src="../php/images/icons/user.png" alt="dasboard icon"><p>Manage users</p>
+          </li><br>
+          <li class="dashboard-list-line" onclick="location.href = 'database'">
+            <img class="dash-icon" src="../php/images/icons/database.png" alt="dasboard icon"><p>Manage database</p></a>
+          </li><br>
+          <li class="dashboard-list-line" onclick="toggleTheme()" id="slider">
+            <img class="dash-icon" src="../php/images/icons/themes.png" alt="dasboard icon"><p>Theme (Light - Blocus)</p>
+          </li><br>
         </ul>
       </div>
       <div class="users-list">

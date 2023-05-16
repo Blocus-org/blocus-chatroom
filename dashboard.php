@@ -28,12 +28,24 @@ include_once "header.php"; ?>
       </header>
       <div class="dashboard">
         <ul class="dashboard-list">
-          <li class="dashboard-list-line" onclick="location.href = 'users'"><img class="dash-icon" src="php/images/icons/icon.png" alt="dasboard icon"> <p>Chat with someone</p></li><br>
-          <li class="dashboard-list-line" onclick="location.href = 'contacts'"><img class="dash-icon" src="php/images/icons/contacts.png" alt="dasboard icon"><p>Contacts</p></li><br>
-          <li class="dashboard-list-line" onclick="location.href = 'settings'"><img class="dash-icon" src="php/images/icons/settings.png" alt="dasboard icon"><p>Settings</p></li><br>
-          <li class="dashboard-list-line" onclick="toggleTheme()" id="slider"><img class="dash-icon" src="php/images/icons/themes.png" alt="dasboard icon"><p>Theme (Light - Blocus)</p></li><br>
-          <li class="dashboard-list-line" onclick="location.href = 'wipe'"><img class="dash-icon" src="php/images/icons/wipe.png" alt="dasboard icon"><p>Delete account and data</p></li><br>
-          <li class="dashboard-list-line" onclick="location.href = 'privacy-policy'"><img class="dash-icon" src="php/images/icons/privacy.png" alt="dasboard icon"><p>Privacy policy</p></a></li>
+          <li class="dashboard-list-line" onclick="location.href = 'users'">
+            <img class="dash-icon" src="php/images/icons/icon.png" alt="dasboard icon"> <p>Chat with someone</p>
+          </li><br>
+          <li class="dashboard-list-line" onclick="location.href = 'contacts'">
+            <img class="dash-icon" src="php/images/icons/contacts.png" alt="dasboard icon"><p>Contacts</p>
+          </li><br>
+          <li class="dashboard-list-line" onclick="location.href = 'settings'">
+            <img class="dash-icon" src="php/images/icons/settings.png" alt="dasboard icon"><p>Settings</p>
+          </li><br>
+          <li class="dashboard-list-line" onclick="toggleTheme()" id="slider">
+            <img class="dash-icon" src="php/images/icons/themes.png" alt="dasboard icon"><p>Theme (Light - Blocus)</p>
+          </li><br>
+          <li class="dashboard-list-line" onclick="location.href = 'wipe'">
+            <img class="dash-icon" src="php/images/icons/wipe.png" alt="dasboard icon"><p>Delete account and data</p>
+          </li><br>
+          <li class="dashboard-list-line" onclick="location.href = 'privacy-policy'">
+            <img class="dash-icon" src="php/images/icons/privacy.png" alt="dasboard icon"><p>Privacy policy</p></a>
+          </li>
         </ul>
       </div>
       <div class="users-list">

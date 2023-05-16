@@ -28,7 +28,10 @@
             if ($_GET['user_id'] == $row['unique_id']) {
               $outgoing_id = $_SESSION['unique_id'];
               $incoming_id = mysqli_real_escape_string($conn, sec($_GET['user_id']));
-              $sql = mysqli_query($conn, "DELETE FROM messages WHERE (outgoing_msg_id = {$outgoing_id} AND incoming_msg_id = {$incoming_id}) OR (outgoing_msg_id = {$incoming_id} AND incoming_msg_id = {$outgoing_id})");
+              $sql = mysqli_query($conn, 
+                "DELETE FROM messages WHERE (outgoing_msg_id = 
+                {$outgoing_id} and incoming_msg_id = {$incoming_id}) or 
+                (outgoing_msg_id = {$incoming_id} and incoming_msg_id = {$outgoing_id})");
             }
           }
         ?>
@@ -39,7 +42,12 @@
           <p><?php echo $row['status']; ?></p>
         </div>
         <div id="nuke"class="nuke">
-            <img id="nuke-img" class="dash-icon nuke-img" src="php/images/icons/nuke.png" alt="nuke icon" onclick="location.href = 'chat?user_id=<?= sec($user_id)?>&nuke_conv=true'">
+            <img 
+              id="nuke-img" 
+              class="dash-icon nuke-img" 
+              src="php/images/icons/nuke.png" 
+              alt="nuke icon" 
+              onclick="location.href = 'chat?user_id=<?= sec($user_id)?>&nuke_conv=true'">
         </div>
       </header>
       <p id="chatbox-scroll-mode" class="chatbox-scroll-mode"></p>
