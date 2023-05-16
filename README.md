@@ -52,6 +52,6 @@ You need to setup an apache/php/mariadb webserver
 - Create database (same name as you choosed in config.php)
 - Put all files in your webserver root
 - Import .sql file with adminer (blocus_chat_db.sql) (http://localhost/adminer.php)
-- If you enabled the admin interface, visit https://your-web-server.adress.com/update.php to check requirements and create your admin account
+- Visit https://your-web-server.adress.com/update.php to check requirements and create your admin account
 - You are all done! Visit https://your-web-server.adress.com/
 
