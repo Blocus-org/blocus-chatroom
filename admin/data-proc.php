@@ -1,12 +1,12 @@
-<?php 
+<?php
   session_start();
   include_once "../php/config.php";
-  if(!isset($_SESSION['unique_id'])){
-    header("location:../login"); 
-  }elseif(!isset($admin_unique_id) && !isset($admin_username) && !isset($admin_password) OR $admin_interface === false){
+  if (!isset($_SESSION['unique_id'])) {
+    header("location:../login");
+  }elseif (!isset($admin_unique_id) && !isset($admin_username) && !isset($admin_password) OR $admin_interface === false) {
     if ($_SESSION['unique_id'] !== $admin_unique_id) {
       header("location:../dashboard");
-    }else{
+    }else {
     echo "Admin interface is disabled. Take a look to php/config.php to manage admin interface.<br><a href='../dashboard'>go back to dashboard</a>";
     }
     die();
@@ -29,12 +29,12 @@
     <section class="users">
       <header>
         <div class="content">
-          <?php 
-            $sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id = {$_SESSION['unique_id']}");
-            if(mysqli_num_rows($sql) > 0){
-              $row = mysqli_fetch_assoc($sql);
-            }
-          ?>
+<?php
+  $sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id = {$_SESSION['unique_id']}");
+  if (mysqli_num_rows($sql) > 0) {
+    $row = mysqli_fetch_assoc($sql);
+  }
+?>
           <img src="../php/images/<?php echo $row['img']; ?>" alt="">
           <div class="details">
             <span><?php echo $row['email']?></span>
@@ -45,19 +45,29 @@
       </header>
       <div class="dashboard">
         <ul class="dashboard-list">
-          <center><h1>Admin interface</h1><center><br><br>
-          <li class="dashboard-list-line" onclick="location.href = '../users'"><img class="dash-icon" src="../php/images/icons/icon.png"> <p>Chat with someone</p></li><br>
-          <li class="dashboard-list-line" onclick="location.href = '../contacts'"><img class="dash-icon" src="../php/images/icons/contacts.png"><p>Contacts</p></li><br>
-          <li class="dashboard-list-line" onclick="location.href = 'user-manager'"><img class="dash-icon" src="../php/images/icons/user.png"><p>Manage users</p></li><br>
-          <li class="dashboard-list-line" onclick="location.href = 'database'"><img class="dash-icon" src="../php/images/icons/database.png"><p>Manage database</p></a></li><br>
-          <li class="dashboard-list-line" onclick="toggleTheme()" id="slider"><img class="dash-icon" src="../php/images/icons/themes.png"><p>Theme (Light - Blocus)</p></li><br>
+          <h1>Admin interface</h1><br><br>
+          <li class="dashboard-list-line" onclick="location.href = '../users'">
+            <img class="dash-icon" src="../php/images/icons/icon.png" alt="dasboard icon"> <p>Chat with someone</p>
+          </li><br>
+          <li class="dashboard-list-line" onclick="location.href = '../contacts'">
+            <img class="dash-icon" src="../php/images/icons/contacts.png" alt="dasboard icon"><p>Contacts</p>
+          </li><br>
+          <li class="dashboard-list-line" onclick="location.href = 'user-manager'">
+            <img class="dash-icon" src="../php/images/icons/user.png" alt="dasboard icon"><p>Manage users</p>
+          </li><br>
+          <li class="dashboard-list-line" onclick="location.href = 'database'">
+            <img class="dash-icon" src="../php/images/icons/database.png" alt="dasboard icon"><p>Manage database</p></a>
+          </li><br>
+          <li class="dashboard-list-line" onclick="toggleTheme()" id="slider">
+            <img class="dash-icon" src="../php/images/icons/themes.png" alt="dasboard icon"><p>Theme (Light - Blocus)</p>
+          </li><br>
         </ul>
       </div>
       <div class="users-list">
       </div>
     </section>
 <?php
-include '../footer.php';
+  include_once '../footer.php';
 ?>
   </div>
 </body>
