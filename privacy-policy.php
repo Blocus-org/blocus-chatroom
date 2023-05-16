@@ -1,7 +1,7 @@
 <?php 
   session_start();
   include_once "php/config.php";
-  if(!isset($_SESSION['unique_id'])){
+  if(!isset($_SESSION['unique_id'])) {
     header("location: login");
   }
 include_once "header.php"; ?>
@@ -36,7 +36,7 @@ include_once "header.php"; ?>
       </div>
     </section>
 <?php
-  include 'footer.php';
+  include_once 'footer.php';
 ?>
   </div>
   <script src="javascript/users.js"></script>
