@@ -6,23 +6,26 @@
 <div align='center'>
     <img src='preview.png'>
 </div>
-Instant messaging app with HTML/CSS JavaScript and PHP
+Instant server side encrypted messaging app with HTML/CSS JavaScript and PHP: Make the Internet free again!
 
 ## Features
 
 - Sign up without phone number and without mail.
-- All messages in database are encrypted with openssl (AES-256-CTR sha256)
-- All messages are deleted after 24h
+- No ads, no trackers, no analytics.
+- All messages are encrypted with AES-256-CTR into the databse.
+- All messages are deleted after 24h.
 - User-friendly admin interface (manage database, users, etc.)
-- Fast configuration on a running web server
-- Android friendly interface
-- Easy config 
+- Android-friendly UI
+- Easy config on an apache/PHP/MySQL webserver
+
 - Even more coming soon (Contacts, persistant area, proxies, etc)
 
 
 ## Thanks to contributors
 
 - [G-team](https://glitcher.me)
+
+- [You?](https://github.com/blocus-org/blocus-chatroom/contribute.md)
 
 ## How to use
 - Go visit the official instance [chatroom.blocus.ch](https://chatroom.blocus.ch)
