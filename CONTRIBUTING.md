@@ -12,7 +12,7 @@ Welcome to the Blocus Chatroom contributing aera. You can find here every inform
 
   - ***The project is still in Beta version and updates a lot! (more than three updates a week sometimes)*** So, if you got somes big modifications to do, try to stay updated and feel free to ask to join directly the repository collaborators:
  
-     - Verify somone else is not working on the same modification/fix ([here](https://github.com/Zqfd/blocus-chatroom/issues))
+     - Verify somone else is not working on the same modification/fix ([here](https://github.com/blocus-org/blocus-chatroom/issues))
      - Fork the MAIN branch to your account ([how?](#fork))
      - Do your modifications/fixes ([how?](#modifs))
      - Pull request to ***main*** ([how?](#pull-request))
@@ -21,7 +21,7 @@ Welcome to the Blocus Chatroom contributing aera. You can find here every inform
 
 ## <a name="fork">How to fork a repository</a>
 You will need a Github account:
-- Go to the repository's root on Github ([here](https://github.com/Zqfd/blocus-chatroom))
+- Go to the repository's root on Github ([here](https://github.com/blocus-org/blocus-chatroom))
 - Click on 'Fork'
 - Leave the default fork name like this 
 - Be sure that 'fork only main branch' is selected
