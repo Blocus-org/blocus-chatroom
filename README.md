@@ -24,6 +24,7 @@ Instant server side encrypted messaging app with HTML/CSS JavaScript and PHP: Ma
 ## Thanks to contributors
 
 - [G-team](https://glitcher.me)
+
 - [You?](https://github.com/blocus-org/blocus-chatroom/contribute.md)
 
 ## How to use
