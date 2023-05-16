@@ -1,4 +1,5 @@
 # Blocus Chatroom beta-2.0.5-nightly
+New code status:<br>
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Blocus-org_blocus-chatroom&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Blocus-org_blocus-chatroom)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Blocus-org_blocus-chatroom&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=Blocus-org_blocus-chatroom)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Blocus-org_blocus-chatroom&metric=bugs)](https://sonarcloud.io/summary/new_code?id=Blocus-org_blocus-chatroom)
