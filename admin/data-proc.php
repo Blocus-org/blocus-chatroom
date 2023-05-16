@@ -3,11 +3,13 @@
   include_once "../php/config.php";
   if (!isset($_SESSION['unique_id'])) {
     header("location:../login");
-  }elseif (!isset($admin_unique_id) && !isset($admin_username) && !isset($admin_password) OR $admin_interface === false) {
+  }elseif (!isset($admin_unique_id) && !isset($admin_username)
+    && !isset($admin_password) OR $admin_interface === false) {
     if ($_SESSION['unique_id'] !== $admin_unique_id) {
       header("location:../dashboard");
     }else {
-    echo "Admin interface is disabled. Take a look to php/config.php to manage admin interface.<br><a href='../dashboard'>go back to dashboard</a>";
+    echo "Admin interface is disabled. Take a look to php/config.php to manage admin interface.<br>
+    <a href='../dashboard'>go back to dashboard</a>";
     }
     die();
   }elseif ($_SESSION['unique_id'] !== $admin_unique_id) {
@@ -47,19 +49,24 @@
         <ul class="dashboard-list">
           <h1>Admin interface</h1><br><br>
           <li class="dashboard-list-line" onclick="location.href = '../users'">
-            <img class="dash-icon" src="../php/images/icons/icon.png" alt="dasboard icon"> <p>Chat with someone</p>
+            <img class="dash-icon" src="../php/images/icons/icon.png" alt="dasboard icon">
+            <p>Chat with someone</p>
           </li><br>
           <li class="dashboard-list-line" onclick="location.href = '../contacts'">
-            <img class="dash-icon" src="../php/images/icons/contacts.png" alt="dasboard icon"><p>Contacts</p>
+            <img class="dash-icon" src="../php/images/icons/contacts.png" alt="dasboard icon">
+            <p>Contacts</p>
           </li><br>
           <li class="dashboard-list-line" onclick="location.href = 'user-manager'">
-            <img class="dash-icon" src="../php/images/icons/user.png" alt="dasboard icon"><p>Manage users</p>
+            <img class="dash-icon" src="../php/images/icons/user.png" alt="dasboard icon">
+            <p>Manage users</p>
           </li><br>
           <li class="dashboard-list-line" onclick="location.href = 'database'">
-            <img class="dash-icon" src="../php/images/icons/database.png" alt="dasboard icon"><p>Manage database</p></a>
+            <img class="dash-icon" src="../php/images/icons/database.png" alt="dasboard icon">
+            <p>Manage database</p></a>
           </li><br>
           <li class="dashboard-list-line" onclick="toggleTheme()" id="slider">
-            <img class="dash-icon" src="../php/images/icons/themes.png" alt="dasboard icon"><p>Theme (Light - Blocus)</p>
+            <img class="dash-icon" src="../php/images/icons/themes.png" alt="dasboard icon">
+            <p>Theme (Light - Blocus)</p>
           </li><br>
         </ul>
       </div>

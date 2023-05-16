@@ -1,12 +1,12 @@
 <?php
 	include_once "config.php";
-	define("encryption_method", $algorithm);
-	define("key", $encryption_key);
+	define("ENCRYPTION_METHOD", $algorithm);
+	define("KEY", $encryption_key);
 
 	function encrypt($data) {
- 		$key = key;
+ 		$key = KEY;
 		$plaintext = $data;
-		$ivlen = openssl_cipher_iv_length($cipher = encryption_method);
+		$ivlen = openssl_cipher_iv_length($cipher = ENCRYPTION_METHOD);
 		$iv = openssl_random_pseudo_bytes($ivlen);
 		$ciphertext_raw = openssl_encrypt($plaintext, $cipher, $key, $options = OPENSSL_RAW_DATA, $iv);
 		$hmac = hash_hmac('sha256', $ciphertext_raw, $key, $as_binary = true);
@@ -14,9 +14,9 @@
 		return $ciphertext;
 	}
 		function decrypt($data) {
-	    $key = key;
+	    $key = KEY;
 	    $c = base64_decode($data);
-	    $ivlen = openssl_cipher_iv_length($cipher = encryption_method);
+	    $ivlen = openssl_cipher_iv_length($cipher = ENCRYPTION_METHOD);
 	    $iv = substr($c, 0, $ivlen);
 	    $hmac = substr($c, $ivlen, $sha2len = 32);
 	    $ciphertext_raw = substr($c, $ivlen + $sha2len);
