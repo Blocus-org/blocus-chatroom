@@ -3,12 +3,12 @@
 
   include_once "../php/config.php";
   
-  if(!isset($_SESSION['unique_id'])){
+  if (!isset($_SESSION['unique_id'])) {
     header("location:../login"); 
-  }elseif(!isset($admin_unique_id) && !isset($admin_username) && !isset($admin_password) OR $admin_interface === false){
+  }elseif (!isset($admin_unique_id) && !isset($admin_username) && !isset($admin_password) OR $admin_interface === false) {
     if ($_SESSION['unique_id'] !== $admin_unique_id) {
       header("location:../dashboard");
-    }else{
+    }else {
     echo "Admin interface is disabled. Take a look to php/config.php to manage admin interface.<br><a href='../dashboard.php'>go back to dashboard</a>";
     }
     die();
@@ -18,7 +18,7 @@
 
   $alert_box = "";
 
-  if(!isset($_GET['delete_user']) && !empty($_GET['delete_user'])){
+  if (!isset($_GET['delete_user']) && !empty($_GET['delete_user'])) {
     $accout_to_delete = mysqli_real_escape_string($conn, sec($_GET['delete_user']));
     $sql = "";
   }
@@ -41,7 +41,7 @@
         <div class="content">
           <?php 
             $sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id = {$_SESSION['unique_id']}");
-            if(mysqli_num_rows($sql) > 0){
+            if (mysqli_num_rows($sql) > 0) {
               $row = mysqli_fetch_assoc($sql);
             }
           ?>
@@ -49,14 +49,14 @@
         </div>
         <a href="../php/logout?logout_id=<?php echo $row['unique_id']; ?>" class="logout">Logout</a>
       </header>
-      <br><p class="use"><a href="user-manager"><img class="dash-icon nuke-img" src="../php/images/icons/refresh.png"></a></p><br><p><span style="color:red;">Wanring</span>: Deleting an account is definitive!</p><br>
+      <br><p class="use"><a href="user-manager"><img class="dash-icon nuke-img" src="../php/images/icons/refresh.png" alt="refresh icon"></a></p><br><p><span style="color:red;">Wanring</span>: Deleting an account is definitive!</p><br>
       <p><?= $alert_box; ?></p>
       <div class="users-list">
 
       </div>
     </section>
 <?php
-  include '../footer.php';
+  include_once '../footer.php';
 ?>
   </div>
   <script type="text/javascript">

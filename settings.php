@@ -1,7 +1,7 @@
 <?php 
   session_start();
   include_once "php/config.php";
-  if(!isset($_SESSION['unique_id'])){
+  if(!isset($_SESSION['unique_id'])) {
     header("location: login");
   }
 include_once "header"; ?>
@@ -12,7 +12,7 @@ include_once "header"; ?>
         <div class="content">
           <?php 
             $sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id = {$_SESSION['unique_id']}");
-            if(mysqli_num_rows($sql) > 0){
+            if(mysqli_num_rows($sql) > 0) {
               $row = mysqli_fetch_assoc($sql);
             }
           ?>
@@ -26,7 +26,7 @@ include_once "header"; ?>
 
     </section>
 <?php
-  include 'footer.php';
+  include_once 'footer.php';
 ?>
   </div>
   <script src="javascript/users.js"></script>

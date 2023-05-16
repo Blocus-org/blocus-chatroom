@@ -1,7 +1,7 @@
 <?php 
   session_start();
   include_once "php/config.php";
-  if(!isset($_SESSION['unique_id'])){
+  if (!isset($_SESSION['unique_id'])) {
     header("location: login");
   }
 include_once "header.php"; ?>
@@ -12,13 +12,13 @@ include_once "header.php"; ?>
         <div class="content">
           <?php 
             $sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id = {$_SESSION['unique_id']}");
-            if(mysqli_num_rows($sql) > 0){
+            if (mysqli_num_rows($sql) > 0) {
               $row = mysqli_fetch_assoc($sql);
             }
           ?>
           <a href="dashboard" class="dashboard-btn">Dashboard</a>
         </div>
-        <a href="php/logout?logout_id=<?php echo $row['unique_id']; ?>" class="logout"><p>Logout</p></a>
+        <a href="php/logout?logout_id=<?= $row['unique_id']; ?>" class="logout"><p>Logout</p></a>
         <script src="javascript/toggle-theme.js"></script>
       </header>
       <div class="wipe-account-div">
@@ -32,7 +32,7 @@ include_once "header.php"; ?>
       </div>
     </section>
 <?php
-  include 'footer.php';
+  include_once 'footer.php';
 ?>
   </div>
   <script src="javascript/users.js"></script>

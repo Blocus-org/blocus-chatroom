@@ -3,7 +3,7 @@
   ini_set('session.cookie_lifetime', 60 * 60 * 24 * 100);
   ini_set('session.gc_minlifetime', 60 * 60 * 24 * 100);
   session_start();
-  if(isset($_SESSION['unique_id'])){
+  if (isset($_SESSION['unique_id'])) {
     header("location: dashboard");
   }
   include_once "header.php"; 
@@ -22,7 +22,7 @@
           <label>Password</label>
           <input class="passwd" type="password" name="password" placeholder="Enter your password" required>
           <div class="show-hide">
-            <span class="eye-leg"><p id="eye"><img class="dash-icon" src="php/images/icons/eye.png"></p>
+            <span class="eye-leg"><p id="eye"><img class="dash-icon" alt="eye icon" src="php/images/icons/eye.png"></p>
           </div>
         </div>
         <div class="field button">
@@ -32,7 +32,7 @@
       <div class="link">Not yet signed up? <a class="signup-link" href="index">Signup now</a></div>
     </section>
 <?php
-  include 'footer.php';
+  include_once 'footer.php';
 ?>
   </div>
   </div>
