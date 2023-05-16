@@ -10,7 +10,7 @@
   // AGPL-v3.0-or-later
 
   session_start();
-  $version = "alpha-1.1.2";
+  $version = "alpha-1.1.3";
 
   // Advice
   echo "update.php $version. for Debian 11 Bullseye<br><br>Feel free to report any issues at <a href='https://github.com/Blocus-org/blocus-chatroom/issues'>the blocus-chatroom official repository</a> or at <a href='mailto:blocus-org@proton.me'>blocus-org@proton.me</a><br><br><span style='color:Red;'><br>PLEASE REMOVE THIS FILE FROM YOUR SERVER WHEN YOU ARE DONE!!<br></span><br>";
@@ -41,7 +41,7 @@
       file_put_contents("php/config.php", $filecontent_backup);
       echo " ☑ Checked write permission on config.php: -------- <span style='color:green;'>Write - OK</span><br>";
     }else{
-      $php_error = " ☒ Checked read permission on config.php: --------  <span style='color:Red;'>Cannot read config file... Please check files permissions (read and write permission for wwww-data)</span><br>";
+      $php_error = " ☒ Checked write permission on config.php: --------  <span style='color:Red;'>Cannot write config file... Please check files permissions (read and write permission for wwww-data)</span><br>";
       echo $php_error;
     }
   }
