@@ -29,7 +29,7 @@ $dbname = "blocus_chat_db";
 
 // Footer config:
 $app_name = "Blocus-chatroom";
-$app_version = "beta-2.0.5-nightly";
+$app_version = "beta-2.0.6-nightly";
 $source_url = ""; // If you run a modified version, create a public repository (LICENCE: GNU-AGPL-v3.0-or-later).
 
 // Encryption config:
