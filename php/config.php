@@ -1,7 +1,7 @@
 <?php
   $hostname = "localhost";
-  $username = "";
-  $password = "";
+  $username = "zqfd";
+  $password = "AFozeRZ82199";
   $dbname = "blocus_chat_db";
 
   $conn = mysqli_connect($hostname, $username, $password, $dbname);
